@@ -72,23 +72,62 @@ cannot afford a single claim a reviewer can catch out.
 ## Single purpose
 
 ```text
-Displays stress marks on Bulgarian words on web pages.
+Bulgarian Accenter has one purpose: to display stress marks on Bulgarian words on web pages.
+
+Bulgarian does not print its stress marks, and the stress is not predictable from spelling, so a
+reader cannot tell from the page how a word is pronounced. The extension looks each Bulgarian word
+up in a dictionary bundled inside the package and renders the stressed vowel with an accent
+(вятър becomes вя́тър). A toolbar click toggles it on or off for the current tab.
+
+It does nothing else. There is no account, no settings page, and no network request.
 ```
 
 ## Permission justification — `<all_urls>`
 
+Note this is a **host permission** even though `permissions` and `host_permissions` are both empty:
+the store counts the `<all_urls>` match pattern on the content script. That is what triggers the
+"may require an in-depth review" warning, and it is unavoidable for this extension.
+
 ```text
-The extension cannot know in advance which pages contain Bulgarian, so it must be able to read the
-lang attribute of any page. On a page with no Bulgarian markup it runs one querySelector, finds
-nothing, and stops — it never even fetches its dictionary. No page content is transmitted anywhere:
-the extension makes zero network requests, and the dictionary it consults is bundled in the
-package.
+The extension must read page text to find Bulgarian words, and it cannot know in advance which
+sites contain Bulgarian. Bulgarian appears on news sites, Wikipedia, forums, blogs and anywhere
+else, so no fixed list of hosts could fulfil the purpose. The <all_urls> match pattern on the
+content script is the narrowest pattern that works.
+
+On a page with no Bulgarian markup the content script runs a single querySelector, finds nothing,
+and stops — it does not even load its dictionary. Page content is never transmitted: the extension
+makes zero network requests, and the dictionary it consults is bundled in the package and read via
+chrome.runtime.getURL. Nothing leaves the user's device.
 ```
 
-## Privacy
+## Remote code
 
-No data collected. Certify that in the Privacy tab, and give the `PRIVACY.md` URL anyway.
-Firefox's equivalent is already declared in the manifest:
+**No.** Verified in the source, not assumed: no `eval`, no `new Function`, no external `<script>`,
+no remote module. The extension's only `fetch` is `chrome.runtime.getURL('data/stress-dict.txt')`,
+which reads a file inside the package — local I/O, not a network call.
+
+## Data usage — leave every box unchecked
+
+The disclosure asks what user data you **collect**, meaning obtain and send off the device. This
+extension sends nothing anywhere: no `fetch` to any URL, no XHR, no `sendBeacon`, no WebSocket. The
+content script reads page text in the page and it stays there.
+
+The tempting mistake is to tick **Website content** because the extension reads pages. Do not. That
+box publishes "this extension collects website content" on the listing, which is false, contradicts
+`PRIVACY.md`, and puts a data-collection warning on an extension whose entire pitch is that nothing
+leaves your machine. Reading is not collecting.
+
+All three certifications are true — tick them: no selling or transferring user data, no use outside
+the single purpose, no use for creditworthiness or lending.
+
+## Privacy policy URL
+
+```text
+https://github.com/noomorph/bulgarian-accenter/blob/main/PRIVACY.md
+```
+
+A public URL is all the field needs; GitHub Pages is not a prerequisite. Swap it for the Pages URL
+later if that ever gets enabled. Firefox's equivalent is already declared in the manifest:
 `data_collection_permissions: { required: ["none"] }`.
 
 ## Graphic assets
