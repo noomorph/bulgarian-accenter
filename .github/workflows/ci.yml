@@ -43,7 +43,7 @@ jobs:
       - id: pin
         run: echo "sha=$(node -p "require('./data/PROVENANCE.json').sha256")" >> "$GITHUB_OUTPUT"
 
-      - uses: actions/cache@v4
+      - uses: actions/cache@v6
         with:
           path: .cache/db.sql.gz
           key: rechnik-dump-${{ steps.pin.outputs.sha }}
