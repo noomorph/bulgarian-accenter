@@ -56,7 +56,7 @@ jobs:
       - name: Package source for AMO review
         run: git archive --format=zip --output="dist/source-${GITHUB_REF_NAME}.zip" HEAD
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: release-artifacts
           path: |
