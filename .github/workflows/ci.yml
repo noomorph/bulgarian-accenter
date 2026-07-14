@@ -46,7 +46,7 @@ jobs:
       - run: npm ci
       - run: npm run dict:fetch
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: dictionary
           path: data/stress-dict.txt
@@ -106,7 +106,7 @@ jobs:
         run: npx web-ext lint --source-dir dist/firefox
 
       # So a reviewer can load-unpacked any PR without building the dictionary themselves.
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: extension-zips
           path: dist/*.zip
