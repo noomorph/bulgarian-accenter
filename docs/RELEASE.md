@@ -88,13 +88,16 @@ dump:check` verifies a local copy. The hardcoded `/Users/noomorph/...` path is g
 ## 4. CI / Release — DONE ✅
 
 - ✅ `ci.yml` — lint, format, tests on Node 20/22/24, build, AMO lint, both zips uploaded per PR so
-  a reviewer can load-unpacked any branch. Actions pinned to `@v4` (the reference repo's `@v2`s are
-  dead, and `upload-artifact@v3` has been switched off entirely).
+  a reviewer can load-unpacked any branch. Actions are kept on their current majors by a grouped
+  Dependabot job (the reference repo's `@v2`s are dead, and `upload-artifact@v3` has been switched
+  off entirely).
 - ✅ `release.yml` — tag `v*.*.*` → verify tag matches `package.json` **and** `CHANGELOG` → test →
   build → `source.zip` via `git archive` → draft GitHub Release → gated store publish.
 - ✅ Store publishing sits behind **protected environments** (`chrome-web-store`, `addons-mozilla-org`),
   so a fork's PR can never see the credentials and a human is on the button.
-- ⬜ Create those two environments and add the secrets: `CWS_*` (4) and `AMO_JWT_*` (2).
+- ⬜ Create those two environments and add the secrets: `CWS_*` (5) and `AMO_JWT_*` (2).
+  `CWS_PUBLISHER_ID` is the one that is easy to miss — `chrome-webstore-upload-cli` v4 requires it
+  and v3 did not. It is on the Developer Dashboard **Settings** page, not the item page.
 
 ## 5. Store submission — TODO ⬜
 
