@@ -95,9 +95,22 @@ dump:check` verifies a local copy. The hardcoded `/Users/noomorph/...` path is g
   build → `source.zip` via `git archive` → draft GitHub Release → gated store publish.
 - ✅ Store publishing sits behind **protected environments** (`chrome-web-store`, `addons-mozilla-org`),
   so a fork's PR can never see the credentials and a human is on the button.
-- ⬜ Create those two environments and add the secrets: `CWS_*` (5) and `AMO_JWT_*` (2).
-  `CWS_PUBLISHER_ID` is the one that is easy to miss — `chrome-webstore-upload-cli` v4 requires it
-  and v3 did not. It is on the Developer Dashboard **Settings** page, not the item page.
+- ✅ **`chrome-web-store` environment created**, with the two guards the paragraph above promises:
+  a required reviewer (@noomorph), and a deployment branch policy that admits **only `v*` tags**. A
+  push to a branch cannot reach the store credentials even if `release.yml` were changed to try.
+- ✅ `CWS_PUBLISHER_ID` — set. It is the one that is easy to miss: `chrome-webstore-upload-cli` v4
+  requires it and v3 did not, and it lives on the Developer Dashboard **Settings** page rather than
+  the item page.
+- ⬜ The remaining four `CWS_*` secrets. Three of them (`CWS_CLIENT_ID`, `CWS_CLIENT_SECRET`,
+  `CWS_REFRESH_TOKEN`) come from a Google OAuth client — see
+  [chrome-webstore-upload-keys](https://github.com/fregante/chrome-webstore-upload-keys). The
+  fourth, `CWS_EXTENSION_ID`, **cannot exist yet**: an item has no ID until it has been created in
+  the dashboard, which is what §5's "do the first submission by hand" means. The order is forced.
+- ⬜ The `addons-mozilla-org` environment and its `AMO_JWT_*` (2).
+- ⛔ **Publisher account: the trader declaration and postal address are both blank.** Neither is a
+  repo concern and neither will fail CI — they fail *distribution*. An undeclared trader status
+  blocks the listing in the EEA, and the address is published on the item page once declared, so
+  decide what you are comfortable making public before filling it in.
 
 ## 5. Store submission — TODO ⬜
 
