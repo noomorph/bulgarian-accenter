@@ -1,9 +1,17 @@
 'use strict';
 /**
- * Generates icons/icon{16,32,48,128}.png from assets/icon.png — no image dependencies, just zlib.
+ * Generates icons/icon{16,32,48,128}.png from the masters in assets/ — no image dependencies, just
+ * zlib. The masters are the only files to edit by hand; the four PNGs are derived.
  *
- * The mark is the Bulgarian ъ under an acute accent, on the flag's three bands. assets/icon.png is
- * the master and the only thing to edit by hand; these four PNGs are derived.
+ * The mark is the Bulgarian ъ under an acute accent, on the flag's three bands. There are two
+ * masters because the letter is white and the top band it crosses is also white: the ъ's upper bar
+ * is white-on-white, held apart only by a soft shadow. That shadow survives at 128px and dissolves
+ * below it, taking the top of the letter with it.
+ *
+ * So the small sizes come from a master whose bar carries a hard outline. At 128px that outline is
+ * plainly a retouch; by 48px it has become the edge that makes the letter read, and by 16px it is
+ * indistinguishable from ordinary antialiasing. Which is the whole trick — the fix is only visible
+ * at the size that does not use it.
  *
  * Resampling happens in *premultiplied* alpha. Averaging straight RGBA would let the transparent
  * pixels outside the rounded corners drag their (arbitrary) colour into the edge pixels, which is
@@ -15,7 +23,12 @@ const { inflateSync, deflateSync } = require('node:zlib');
 const { readFileSync, writeFileSync, mkdirSync } = require('node:fs');
 const { join } = require('node:path');
 
-const SIZES = [16, 32, 48, 128];
+const MASTERS = {
+  128: 'icon.png', // clean art: at this size the shadow alone separates the letter
+  48: 'icon-small.png', // outlined art: below 128 the shadow is gone and the bar needs an edge
+  32: 'icon-small.png',
+  16: 'icon-small.png',
+};
 
 // --- PNG decode -------------------------------------------------------------
 /** Decodes an 8-bit, non-interlaced PNG to flat RGBA. */
@@ -220,12 +233,19 @@ function encodePng(pixels, size) {
   ]);
 }
 
-const master = trimToSquare(decodePng(readFileSync(join(__dirname, '..', 'assets', 'icon.png'))));
 const outDir = join(__dirname, '..', 'icons');
 mkdirSync(outDir, { recursive: true });
 
-for (const size of SIZES) {
+const cache = new Map();
+const load = (name) => {
+  if (!cache.has(name)) {
+    cache.set(name, trimToSquare(decodePng(readFileSync(join(__dirname, '..', 'assets', name)))));
+  }
+  return cache.get(name);
+};
+
+for (const [size, name] of Object.entries(MASTERS)) {
   const file = join(outDir, `icon${size}.png`);
-  writeFileSync(file, encodePng(resample(master, size), size));
-  process.stderr.write(`make-icons: wrote ${file}\n`);
+  writeFileSync(file, encodePng(resample(load(name), Number(size)), Number(size)));
+  process.stderr.write(`make-icons: wrote ${file} (from assets/${name})\n`);
 }
