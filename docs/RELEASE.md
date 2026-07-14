@@ -139,8 +139,12 @@ Automate the *second* release, when only the .zip changes.
   **text selection still works**, which is a real differentiator nobody would guess from a
   description.
 - ⬜ A demo GIF for the README — worth more to a first-time visitor than the entire architecture doc.
-- ⬜ Check the 16px icon: the diagonal flag split will likely mud at that size and want a simplified
-  variant.
+- ✅ Checked the 16px icon, which this section expected to mud. It does not. The bands read as three
+  colour blocks at 16px and the ъ stays a recognisable silhouette; what is lost is the gloss and the
+  bevel, which carry no meaning. It is softer than a geometric mark would be, and more distinctive —
+  a fair trade. Revisit only if it looks wrong in a real toolbar. `icons/*.png` are generated from
+  `assets/icon.png` by `npm run icons`, so a simplified 16px variant means editing the master, not
+  the outputs.
 
 ## 7. Deliberately deferred — file as issues
 
