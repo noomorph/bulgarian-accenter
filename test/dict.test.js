@@ -75,7 +75,7 @@ test('decode survives a malformed line without desyncing the rest', () => {
 const DICT_PATH = join(__dirname, '..', 'data', 'stress-dict.txt');
 const SHIPPED = existsSync(DICT_PATH) ? readFileSync(DICT_PATH, 'utf8') : null;
 const needsDict = {
-  skip: SHIPPED ? false : 'data/stress-dict.txt not built — run `npm run dict:all`',
+  skip: SHIPPED ? false : 'data/stress-dict.txt absent — run `npm run dict:fetch`',
 };
 
 test('shipped dictionary: size and composition', needsDict, () => {

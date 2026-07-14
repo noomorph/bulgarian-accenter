@@ -54,8 +54,9 @@ lookup, which is the case a hash already wins.
 `data/stress-dict.txt` — **422,238 entries**, of which 94,647 are _attested_ (a source recorded
 the mark) and 327,591 are _derived_ (see below).
 
-It is **generated, and not committed**: `npm run dict:all` builds it from the public dump, and
-reproduces the shipped file byte for byte. See [CONTRIBUTING.md](../CONTRIBUTING.md).
+It is **generated, and not committed**. `npm run dict:fetch` pulls the hash-pinned copy (3 MB);
+`npm run dict:all` rebuilds it from the public dump and reproduces that copy byte for byte — which
+is what the pin is for. See [CONTRIBUTING.md](../CONTRIBUTING.md).
 
 The obvious format, ``{"вятър": "вя`тър"}``, spends most of its bytes twice — once on the key,
 once on a near-copy of it. That was tolerable at 94k entries (3.9 MB); at 422k it is 28.8 MB,

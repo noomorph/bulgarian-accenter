@@ -26,10 +26,15 @@ jobs:
       - run: npm run lint
       - run: npm run format:check
 
-  # data/stress-dict.txt is generated, not committed. Build it once here and hand it to every job
-  # that needs it. The 70 MB upstream dump is cached on its recorded SHA-256 — and since it has not
-  # been regenerated upstream since 2013, that cache key is effectively permanent: one download,
-  # ever, not one per CI run.
+  # data/stress-dict.txt is generated, not committed. Fetch the mirrored copy from our own
+  # `dictionary` release and hand it to every job that needs it.
+  #
+  # We deliberately do NOT rebuild from the upstream dump here. rechnik.chitanka.info blocks
+  # datacenter IPs (Actions gets a 403) — and they are right to: it is a 70 MB file they serve for
+  # free, and pulling it on every push is exactly the abuse that block exists to stop. So we
+  # mirror it once and pin the hash. `npm run dict:fetch` refuses any copy that does not match
+  # data/stress-dict.sha256, which is the hash a from-source build produces — so the mirror cannot
+  # silently drift from what `npm run dict:all` would give you.
   dictionary:
     runs-on: ubuntu-latest
     steps:
@@ -39,22 +44,7 @@ jobs:
           node-version-file: .nvmrc
           cache: npm
       - run: npm ci
-
-      - id: pin
-        run: echo "sha=$(node -p "require('./data/PROVENANCE.json').sha256")" >> "$GITHUB_OUTPUT"
-
-      - uses: actions/cache@v4
-        with:
-          path: .cache/db.sql.gz
-          key: rechnik-dump-${{ steps.pin.outputs.sha }}
-
-      - name: Build the dictionary from the public dump
-        run: npm run dict:all
-
-      # If this fails, the dump moved under us, or the extractor stopped being deterministic.
-      # Either way we want to know on a PR, not in a store review.
-      - name: Verify it matches the pinned dump
-        run: npm run dump:check
+      - run: npm run dict:fetch
 
       - uses: actions/upload-artifact@v4
         with:

@@ -31,7 +31,7 @@ Meanwhile, or to run from source:
 
 ```sh
 npm ci
-npm run dict:all   # builds the dictionary from the public source dump — once, ~30 s
+npm run dict:fetch   # the dictionary is generated, not in the repo — this pulls it (3 MB, hash-verified)
 npm run build
 ```
 

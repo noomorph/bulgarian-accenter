@@ -33,17 +33,9 @@ jobs:
         run: grep -q "## \[${GITHUB_REF_NAME#v}\]" CHANGELOG.md || {
           echo "::error::CHANGELOG.md has no section for ${GITHUB_REF_NAME#v}"; exit 1; }
 
-      - id: pin
-        run: echo "sha=$(node -p "require('./data/PROVENANCE.json').sha256")" >> "$GITHUB_OUTPUT"
-
-      - uses: actions/cache@v4
-        with:
-          path: .cache/db.sql.gz
-          key: rechnik-dump-${{ steps.pin.outputs.sha }}
-
-      # The dictionary is generated, not committed — build it from the pinned public dump.
-      - run: npm run dict:all
-      - run: npm run dump:check
+      # The dictionary is generated, not committed. Take the hash-pinned mirror rather than
+      # rebuilding from upstream — see the note in ci.yml.
+      - run: npm run dict:fetch
 
       - run: npm test
       - run: npm run build:zip

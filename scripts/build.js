@@ -82,7 +82,7 @@ function build(target, delta) {
     if (!existsSync(from)) {
       // Most likely a fresh clone: the dictionary is generated and not committed. Fail loudly
       // rather than quietly building an extension that knows no words.
-      throw new Error(`build: missing ${entry} — run \`npm run dict:all\` to build the dictionary`);
+      throw new Error(`build: missing ${entry} — run \`npm run dict:fetch\` to get the dictionary`);
     }
     cpSync(from, join(out, entry), { recursive: true });
   }

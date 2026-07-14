@@ -52,7 +52,21 @@ function sha256(file) {
 
 async function download() {
   process.stderr.write(`fetch-dump: GET ${DUMP_URL}\n`);
-  const res = await fetch(DUMP_URL);
+  // Identify ourselves honestly rather than impersonating a browser. They are giving away a 70 MB
+  // file; the least we can do is say who is asking.
+  const res = await fetch(DUMP_URL, {
+    headers: { 'user-agent': 'bulgarian-accenter (+https://github.com/noomorph/bulgarian-accenter)' },
+  });
+  if (res.status === 403) {
+    throw new Error(
+      `fetch-dump: ${DUMP_URL} -> HTTP 403 Forbidden.\n\n` +
+        'The upstream blocks datacenter IPs — this fails on GitHub Actions and most cloud hosts, and\n' +
+        'succeeds from an ordinary connection. That is their prerogative: it is a 70 MB file they serve\n' +
+        'for free, and we are not going to route around it.\n\n' +
+        'If you only need the dictionary, take the mirrored copy instead:  npm run dict:fetch\n' +
+        '(3 MB, hash-pinned, and byte-for-byte what this build produces.)\n'
+    );
+  }
   if (!res.ok) throw new Error(`fetch-dump: ${DUMP_URL} -> HTTP ${res.status} ${res.statusText}`);
   await pipeline(Readable.fromWeb(res.body), createWriteStream(GZ));
   process.stderr.write(`fetch-dump: wrote ${GZ} (${(statSync(GZ).size / 1e6).toFixed(1)} MB)\n`);

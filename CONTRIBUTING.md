@@ -4,9 +4,9 @@
 
 ```sh
 npm ci
-npm test              # pure logic, dictionary format, DOM behaviour (jsdom)
-npm run dict:all      # build the dictionary — see below. ~70 MB download, ~30 s, ~6 GB of heap.
+npm run dict:fetch    # 3 MB, hash-verified. The dictionary is generated and not in the repo.
 npm run build         # -> dist/chrome, dist/firefox
+npm test
 ```
 
 Then load it:
@@ -23,38 +23,44 @@ There is no bundler and no framework. `src/` is what ships, unminified.
 **`data/stress-dict.txt` is not in the repository.** It is generated, and it is `.gitignore`d.
 
 A fresh clone has no dictionary, so the extension will find no words, and the tests that validate
-all 422k entries will **skip** — they say so when they do. Build it:
+all 422k entries will **skip** — they say so when they do. There are two ways to get it, and you
+almost certainly want the first.
 
-```sh
-npm run dict:all
-```
+### `npm run dict:fetch` — the fast path
 
-That is `npm run dump` (fetch the ~70 MB dump from
-[rechnik.chitanka.info](https://rechnik.chitanka.info/), unpack it, record its SHA-256 in
-`data/PROVENANCE.json`), then `npm run fix-sql` (apply the corrections in
-`data/sql-corrections.json` to the dump), then `npm run dict` (the two-pass extraction). It takes
-about 30 seconds and wants ~6 GB of heap. You only need to do it once.
+Downloads the prebuilt dictionary (3 MB) from the [`dictionary` release][dict-release] and verifies
+it against `data/stress-dict.sha256`. Seconds. This is what CI does.
 
-**It rebuilds byte for byte.** The dictionary that ships in the stores hashes identically to the one
-you get from that command — CI asserts it. Which is precisely why it does not need to be in git.
+### `npm run dict:all` — rebuild from the true source
 
-Never hand-edit it. To change a stress mark, fix the *input* — see below.
+Fetches the ~70 MB dump from [rechnik.chitanka.info](https://rechnik.chitanka.info/), applies the
+corrections in `data/sql-corrections.json`, and runs the two-pass extraction. ~30 seconds, ~6 GB of
+heap, and it re-pins the hash.
+
+**It reproduces the mirrored file byte for byte** — same SHA-256. That is the entire point of the
+pin: `dict:fetch` *refuses* any mirror that does not match what a from-source build produces, so
+the convenient copy can never quietly drift from the reproducible one.
+
+Two things to know before you run it. It needs an ordinary internet connection: the upstream blocks
+datacenter IPs, so it 403s on GitHub Actions and most cloud boxes. That is their prerogative — they
+serve a 70 MB file for free — and it is why we mirror rather than hammer it. And the dump has not
+been regenerated upstream since **2013**, so there is rarely a reason to.
+
+Never hand-edit the dictionary. To change a stress mark, fix the *input* — see below.
 
 ### Why isn't it committed?
 
-Committing it would be more convenient, and two things outweigh that.
+Committing it would be simpler, and two things outweigh that.
 
 It is 3 MB of dense generated text that rewrites almost entirely on every regeneration, so each
 rebuild would add another full copy to the history, permanently.
 
 And Речко — the source of the stress marks — grants no licence to redistribute them (see `NOTICE`).
-Keeping that data out of an immutable public history means a takedown request would cost us a
-deleted release asset, rather than a rewrite of published history that other people have already
-cloned and forked. Reversibility is worth a `npm run dict:all`.
+Keeping that data out of an immutable public history means a takedown request would cost a deleted
+release asset, rather than a rewrite of published history that other people have already cloned and
+forked. Reversibility is worth one `npm run dict:fetch`.
 
-If you just want the file and not the build, it is attached to every [release][releases].
-
-[releases]: https://github.com/noomorph/bulgarian-accenter/releases
+[dict-release]: https://github.com/noomorph/bulgarian-accenter/releases/tag/dictionary
 
 ## Correcting a wrong accent
 

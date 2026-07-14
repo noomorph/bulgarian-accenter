@@ -28,8 +28,10 @@
     "dump:check": "node scripts/fetch-dump.js --check",
     "fix-sql": "node scripts/fix-stress-sql.js",
     "dict": "node --max-old-space-size=8192 scripts/extract-stress-dict.js",
-    "dict:all": "npm run dump && npm run fix-sql && npm run dict",
-    "icons": "node scripts/make-icons.js"
+    "dict:all": "npm run dump && npm run fix-sql && npm run dict && npm run dict:hash",
+    "icons": "node scripts/make-icons.js",
+    "dict:fetch": "node scripts/fetch-dict.js",
+    "dict:hash": "node scripts/fetch-dict.js --write-pin"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.4",

@@ -69,12 +69,20 @@ The original blocker was "under what terms may we redistribute this dictionary?"
 The upstream dump is a **public download** (`rechnik.chitanka.info/db.sql.gz`), so the build is
 reproducible by anyone — which is exactly what AMO's source-code review wants.
 
-- ✅ `scripts/fetch-dump.js` downloads, unpacks, and records the dump's SHA-256 in
-  `data/PROVENANCE.json`. The hardcoded `/Users/noomorph/...` path is gone.
-- ✅ **Reproducibility confirmed empirically**: `npm run dict:all` regenerates
-  `data/stress-dict.txt` **byte for byte identical** to the committed file
-  (`c7c2bc2c…`) from the public dump (`83e588c8…`). This is not a claim, it was run.
-- ✅ `npm run dump:check` verifies a local dump against the recorded hash.
+- ✅ **Reproducibility confirmed empirically.** `npm run dict:all` regenerates `data/stress-dict.txt`
+  **byte for byte identical** (`c7c2bc2c…`) from the public dump (`83e588c8…`). This was run, not
+  assumed.
+- ✅ The dictionary is **not committed**. It is mirrored as a hash-pinned
+  [release asset](https://github.com/noomorph/bulgarian-accenter/releases/tag/dictionary) and
+  fetched by `npm run dict:fetch`, which **refuses any copy that does not match**
+  `data/stress-dict.sha256` — the hash a from-source build produces. The convenient copy therefore
+  cannot drift from the reproducible one.
+- ⚠️ **The upstream 403s from datacenter IPs.** GitHub Actions cannot fetch the dump. This is
+  correct behaviour on their part — it is a 70 MB file served for free — and it is why CI takes the
+  mirror instead of rebuilding. Do not "fix" this by spoofing a browser User-Agent.
+  `npm run dict:all` needs an ordinary connection.
+- ✅ `scripts/fetch-dump.js` records the dump's SHA-256 in `data/PROVENANCE.json`; `npm run
+dump:check` verifies a local copy. The hardcoded `/Users/noomorph/...` path is gone.
 - Note: the dump has not been regenerated upstream since **2013**, so no refresh cron is warranted.
 
 ## 4. CI / Release — DONE ✅
