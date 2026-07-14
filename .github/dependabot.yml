@@ -9,7 +9,15 @@ updates:
       dev-dependencies:
         patterns: ['*']
 
+  # Grouped into a single pull request, and not left to the default one-PR-per-action. Ungrouped,
+  # the five actions here filled the default five-PR budget exactly and actions/setup-node was
+  # dropped from the batch — silently, because a pull request that is never opened is not a pull
+  # request you can notice is missing. It sat three majors behind until someone read the workflow
+  # by hand. One grouped PR cannot be truncated that way.
   - package-ecosystem: github-actions
     directory: /
     schedule:
       interval: monthly
+    groups:
+      github-actions:
+        patterns: ['*']
