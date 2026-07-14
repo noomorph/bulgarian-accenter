@@ -144,9 +144,17 @@ Automate the *second* release, when only the .zip changes.
 ## 6. Store assets — TODO ⬜
 
 - ✅ `assets/banner.png` (1983×793, 2.50:1)
-- ⬜ **Chrome marquee 1400×560** — the banner downscales exactly. No recrop needed.
-- ⬜ **Chrome small tile 440×280** (1.57:1) — needs a *new* crop: icon + wordmark, drop the
-  `вятър → вя́тър` chips.
+- ✅ **Chrome marquee 1400×560** — `assets/promo-marquee-1400x560.png`. The banner downscaled; the
+  0.02% aspect squeeze is invisible, as predicted here.
+- ✅ **Chrome small tile 440×280** — `assets/promo-small-440x280.png`. This one could not be a crop:
+  at 1.57:1 the banner cannot hold the icon and the wordmark side by side, so it is composed —
+  icon over wordmark, the wordmark lifted off the banner by a luminance key so it sits on a clean
+  background rather than a pasted rectangle of the banner's.
+- ⚠️ Both tiles are **24-bit, no alpha** — the store rejects alpha in promo tiles. Keep that if they
+  are ever regenerated. They derive from `assets/banner.png` and `assets/icon.png`: redraw the mark
+  and they go stale silently, because nothing checks them.
+- ✅ Listing copy — description, single purpose, `<all_urls>` justification — lives in
+  `docs/STORE-LISTING.md`, not in a browser form.
 - ⬜ **Screenshots, 1280×800, up to 5 — we have none, and they are what sell the extension.**
   Real `bg.wikipedia.org`, accents on, `ON` badge visible; a before/after pair; and one showing that
   **text selection still works**, which is a real differentiator nobody would guess from a
