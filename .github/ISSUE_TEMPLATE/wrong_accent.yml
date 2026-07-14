@@ -1,0 +1,55 @@
+name: Wrong accent on a word
+description: A word is shown with the stress in the wrong place (or on the wrong vowel).
+title: 'Wrong accent: '
+labels: [dictionary]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you — this is the most useful report you can file.
+
+        About **0.2% of the derived dictionary entries carry a wrong accent**. That number is
+        known, measured and documented, and the only thing that shrinks it is people telling us
+        *which* words. Every confirmed report becomes an entry in `data/sql-corrections.json`.
+
+        Before filing, one thing worth knowing: if the word shows **two** accents, that may be
+        deliberate rather than broken. Bulgarian has homographs — `въ́лна` (wool) and `вълна́`
+        (wave) are the same spelling — and where the sources disagree we deliberately mark every
+        observed position rather than guess. Annoying, but it is not a bug. File it anyway if you
+        think we got it wrong; just mention it.
+
+  - type: input
+    id: word
+    attributes:
+      label: The word, exactly as the extension rendered it
+      description: Copy it straight off the page — the accent copies with it.
+      placeholder: защитно́
+    validations:
+      required: true
+
+  - type: input
+    id: correct
+    attributes:
+      label: Where the stress should be
+      description: The same word with the accent in the right place.
+      placeholder: защи́тно
+    validations:
+      required: true
+
+  - type: input
+    id: url
+    attributes:
+      label: Page you saw it on
+      placeholder: https://bg.wikipedia.org/wiki/...
+    validations:
+      required: false
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Anything that settles it
+      description: >
+        A dictionary entry, a link, "I am a native speaker and this is simply wrong" — all fine.
+        We correct the data from evidence, not from guesses, so even a one-line justification helps.
+    validations:
+      required: false

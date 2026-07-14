@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Security vulnerability
+    url: https://github.com/noomorph/bulgarian-accenter/security/advisories/new
+    about: Please report privately, not as a public issue. See SECURITY.md.
+  - name: How the dictionary is built, and why it is 0.2% wrong
+    url: https://github.com/noomorph/bulgarian-accenter/blob/main/docs/ARCHITECTURE.md
+    about: The derivation passes, the constraints, the measured error rate — answered at length.

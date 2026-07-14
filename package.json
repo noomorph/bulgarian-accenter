@@ -1,0 +1,41 @@
+{
+  "name": "bulgarian-accenter",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Browser extension that marks stressed vowels in Bulgarian text, offline.",
+  "author": "Yaroslav Serhieiev <noomorph@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/noomorph/bulgarian-accenter#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/noomorph/bulgarian-accenter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/noomorph/bulgarian-accenter/issues"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "lint": "eslint .",
+    "lint:ext": "npm run build && web-ext lint --source-dir dist/firefox",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "build": "node scripts/build.js",
+    "build:zip": "node scripts/build.js --zip",
+    "dump": "node scripts/fetch-dump.js",
+    "dump:check": "node scripts/fetch-dump.js --check",
+    "fix-sql": "node scripts/fix-stress-sql.js",
+    "dict": "node --max-old-space-size=8192 scripts/extract-stress-dict.js",
+    "dict:all": "npm run dump && npm run fix-sql && npm run dict",
+    "icons": "node scripts/make-icons.js"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.4",
+    "eslint": "^9.39.4",
+    "jsdom": "^29.1.1",
+    "prettier": "^3.9.4",
+    "web-ext": "^8.10.0"
+  }
+}

@@ -1,0 +1,51 @@
+name: Bug report
+description: Something is broken — the extension does nothing, breaks a page, or misbehaves.
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        For a word with the stress in the wrong place, please use the
+        **Wrong accent** template instead — it asks for the right things.
+
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: And what you expected instead.
+    validations:
+      required: true
+
+  - type: input
+    id: url
+    attributes:
+      label: Page it happened on
+      placeholder: https://bg.wikipedia.org/wiki/...
+    validations:
+      required: false
+
+  - type: dropdown
+    id: browser
+    attributes:
+      label: Browser
+      options: [Chrome, Firefox, Edge, Other]
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: Extension version
+      placeholder: '1.0.0'
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        **If the extension did nothing at all**, the most likely cause is not a bug: the extension
+        only touches text whose nearest `lang` ancestor says Bulgarian. A page with no `lang`
+        markup is skipped by design, even when the text is plainly Bulgarian. The toolbar badge
+        stays empty on such a page, rather than showing `ON`/`OFF`.
+
+        Worth checking before you file — and if the badge is empty, please say so.

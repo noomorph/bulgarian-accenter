@@ -1,0 +1,123 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run format:check
+
+  # data/stress-dict.txt is generated, not committed. Build it once here and hand it to every job
+  # that needs it. The 70 MB upstream dump is cached on its recorded SHA-256 — and since it has not
+  # been regenerated upstream since 2013, that cache key is effectively permanent: one download,
+  # ever, not one per CI run.
+  dictionary:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+
+      - id: pin
+        run: echo "sha=$(node -p "require('./data/PROVENANCE.json').sha256")" >> "$GITHUB_OUTPUT"
+
+      - uses: actions/cache@v4
+        with:
+          path: .cache/db.sql.gz
+          key: rechnik-dump-${{ steps.pin.outputs.sha }}
+
+      - name: Build the dictionary from the public dump
+        run: npm run dict:all
+
+      # If this fails, the dump moved under us, or the extractor stopped being deterministic.
+      # Either way we want to know on a PR, not in a store review.
+      - name: Verify it matches the pinned dump
+        run: npm run dump:check
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dictionary
+          path: data/stress-dict.txt
+          retention-days: 1
+          if-no-files-found: error
+
+  test:
+    needs: dictionary
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        node: [20, 22, 24]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+          cache: npm
+      - run: npm ci
+      - uses: actions/download-artifact@v4
+        with:
+          name: dictionary
+          path: data
+
+      # With the dictionary present, this includes the invariants asserted over every one of the
+      # 422k entries: stripping the marks returns the key, no mark lands anywhere but on a vowel,
+      # every key is a single Cyrillic token, and no derived entry overrules an attested one.
+      # They are why a corrupt dictionary cannot render an accent on a consonant. On a bare clone
+      # they skip; here they must not.
+      - run: npm test
+
+      - name: Fail if the dictionary guards were skipped
+        run: npm test 2>&1 | grep -q "skipped 0" || {
+          echo "::error::the shipped-dictionary invariants did not run"; exit 1; }
+
+  extension:
+    needs: dictionary
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - uses: actions/download-artifact@v4
+        with:
+          name: dictionary
+          path: data
+
+      - run: npm run build:zip
+
+      # AMO's own linter. Running it here means a store-policy violation shows up as a red X on a
+      # pull request, and not as a rejection email three days after submission.
+      - name: Lint the Firefox build (AMO linter)
+        run: npx web-ext lint --source-dir dist/firefox
+
+      # So a reviewer can load-unpacked any PR without building the dictionary themselves.
+      - uses: actions/upload-artifact@v4
+        with:
+          name: extension-zips
+          path: dist/*.zip
+          if-no-files-found: error

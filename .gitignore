@@ -1,0 +1,23 @@
+node_modules/
+*.swp
+
+# Build output
+dist/
+web-ext-artifacts/
+*.zip
+
+# The upstream dump: ~70 MB gzipped, ~730 MB unpacked. Fetched by `npm run dump`.
+.cache/
+*.sql
+*.sql.bak
+
+# The dictionary is GENERATED, and deliberately not committed. `npm run dict:all` rebuilds it
+# byte-for-byte from the public dump pinned in data/PROVENANCE.json — verified, not hoped for.
+#
+# Keeping it out of git buys two things. It keeps 3 MB of dense generated text (which re-writes
+# almost entirely on every regeneration) out of the history forever. And it keeps the one piece of
+# data whose upstream grants us no licence — Речко's stress marks — out of an immutable public
+# record: a takedown request would mean deleting a release asset, not rewriting published history.
+#
+# It ships in the extension zips and is attached to every GitHub release.
+data/stress-dict.txt

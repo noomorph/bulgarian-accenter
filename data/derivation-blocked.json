@@ -1,0 +1,2607 @@
+[
+  {
+    "inflection_class": "49",
+    "speech_part": "noun_female",
+    "slot": "ед.ч. членувано",
+    "lemma_is_monosyllabic": false,
+    "observed": 166,
+    "would_have_been_wrong": 166,
+    "examples": [
+      {
+        "lemma": "безкрайност",
+        "form": "безкрайността",
+        "derived_from": "безкрайност",
+        "we_would_say": "безкра`йността",
+        "sources_say": "безкрайността`"
+      },
+      {
+        "lemma": "безтегловност",
+        "form": "безтегловността",
+        "derived_from": "безтегловност",
+        "we_would_say": "безтегло`вността",
+        "sources_say": "безтегловността`"
+      },
+      {
+        "lemma": "бележитост",
+        "form": "бележитостта",
+        "derived_from": "бележитост",
+        "we_would_say": "бележи`тостта",
+        "sources_say": "бележитостта`"
+      }
+    ]
+  },
+  {
+    "inflection_class": "54",
+    "speech_part": "noun_neutral",
+    "slot": "мн.ч.",
+    "lemma_is_monosyllabic": false,
+    "observed": 211,
+    "would_have_been_wrong": 59,
+    "examples": [
+      {
+        "lemma": "белило",
+        "form": "белила",
+        "derived_from": "белило",
+        "we_would_say": "бели`ла",
+        "sources_say": "белила`"
+      },
+      {
+        "lemma": "благо",
+        "form": "блага",
+        "derived_from": "благо",
+        "we_would_say": "бла`га",
+        "sources_say": "блага`"
+      },
+      {
+        "lemma": "блато",
+        "form": "блата",
+        "derived_from": "блато",
+        "we_would_say": "бла`та",
+        "sources_say": "блата`"
+      }
+    ]
+  },
+  {
+    "inflection_class": "1",
+    "speech_part": "noun_male",
+    "slot": "ед.ч. пълен член",
+    "lemma_is_monosyllabic": true,
+    "observed": 455,
+    "would_have_been_wrong": 30,
+    "examples": [
+      {
+        "lemma": "бик",
+        "form": "бикът",
+        "derived_from": "бикове",
+        "we_would_say": "би`кът",
+        "sources_say": "бикъ`т"
+      },
+      {
+        "lemma": "взрив",
+        "form": "взривът",
+        "derived_from": "взривове",
+        "we_would_say": "взри`вът",
+        "sources_say": "взривъ`т"
+      },
+      {
+        "lemma": "вид",
+        "form": "видът",
+        "derived_from": "видове",
+        "we_would_say": "ви`дът",
+        "sources_say": "видъ`т"
+      }
+    ]
+  },
+  {
+    "inflection_class": "49",
+    "speech_part": "noun_female",
+    "slot": "ед.ч. членувано",
+    "lemma_is_monosyllabic": true,
+    "observed": 17,
+    "would_have_been_wrong": 17,
+    "examples": [
+      {
+        "lemma": "вест",
+        "form": "вестта",
+        "derived_from": "вести",
+        "we_would_say": "ве`стта",
+        "sources_say": "вестта`"
+      },
+      {
+        "lemma": "вещ",
+        "form": "вещта",
+        "derived_from": "вещи",
+        "we_would_say": "ве`щта",
+        "sources_say": "вещта`"
+      },
+      {
+        "lemma": "власт",
+        "form": "властта",
+        "derived_from": "власти",
+        "we_would_say": "вла`стта",
+        "sources_say": "властта`"
+      }
+    ]
+  },
+  {
+    "inflection_class": "187ti",
+    "speech_part": "verb_transitive_imperfective",
+    "slot": "сег.вр., 3л., ед.ч.",
+    "lemma_is_monosyllabic": false,
+    "observed": 113,
+    "would_have_been_wrong": 15,
+    "examples": [
+      {
+        "lemma": "видоизменям",
+        "form": "видоизменя",
+        "derived_from": "видоизменям",
+        "we_would_say": "видоизме`ня",
+        "sources_say": "видоизменя`"
+      },
+      {
+        "lemma": "заделям",
+        "form": "заделя",
+        "derived_from": "заделям",
+        "we_would_say": "заде`ля",
+        "sources_say": "заделя`"
+      },
+      {
+        "lemma": "залепям",
+        "form": "залепя",
+        "derived_from": "залепям",
+        "we_would_say": "зале`пя",
+        "sources_say": "залепя`"
+      }
+    ]
+  },
+  {
+    "inflection_class": "168",
+    "speech_part": "verb_transitive_terminative",
+    "slot": "сег.вр., 2л., ед.ч.",
+    "lemma_is_monosyllabic": false,
+    "observed": 12,
+    "would_have_been_wrong": 12,
+    "examples": [
+      {
+        "lemma": "въздам",
+        "form": "въздадеш",
+        "derived_from": "въздам",
+        "we_would_say": "възда`деш",
+        "sources_say": "въздаде`ш"
+      },
+      {
+        "lemma": "възсъздам",
+        "form": "възсъздадеш",
+        "derived_from": "възсъздам",
+        "we_would_say": "възсъзда`деш",
+        "sources_say": "възсъздаде`ш"
+      },
+      {
+        "lemma": "додам",
+        "form": "додадеш",
+        "derived_from": "додам",
+        "we_would_say": "дода`деш",
+        "sources_say": "додаде`ш"
+      }
+    ]
+  },
+  {
+    "inflection_class": "76",
+    "speech_part": "adjective",
+    "slot": "м.р.",
+    "lemma_is_monosyllabic": false,
+    "observed": 1109,
+    "would_have_been_wrong": 10,
+    "examples": [
+      {
+        "lemma": "защитен",
+        "form": "защитен",
+        "derived_from": "защитена",
+        "we_would_say": "защите`н",
+        "sources_say": "защи`тен"
+      },
+      {
+        "lemma": "известен",
+        "form": "известен",
+        "derived_from": "известена",
+        "we_would_say": "известе`н",
+        "sources_say": "изве`стен"
+      },
+      {
+        "lemma": "оперен",
+        "form": "оперен",
+        "derived_from": "оперена",
+        "we_would_say": "опе`рен",
+        "sources_say": "о`перен"
+      }
+    ]
+  },
+  {
+    "inflection_class": "76",
+    "speech_part": "adjective",
+    "slot": "ж.р.",
+    "lemma_is_monosyllabic": false,
+    "observed": 1105,
+    "would_have_been_wrong": 10,
+    "examples": [
+      {
+        "lemma": "защитен",
+        "form": "защитена",
+        "derived_from": "защитен",
+        "we_would_say": "защи`тена",
+        "sources_say": "защите`на"
+      },
+      {
+        "lemma": "известен",
+        "form": "известена",
+        "derived_from": "известен",
+        "we_would_say": "изве`стена",
+        "sources_say": "известе`на"
+      },
+      {
+        "lemma": "оперен",
+        "form": "оперена",
+        "derived_from": "оперен",
+        "we_would_say": "о`перена",
+        "sources_say": "опе`рена"
+      }
+    ]
+  },
+  {
+    "inflection_class": "76",
+    "speech_part": "adjective",
+    "slot": "ср.р.",
+    "lemma_is_monosyllabic": false,
+    "observed": 1097,
+    "would_have_been_wrong": 10,
+    "examples": [
+      {
+        "lemma": "защитен",
+        "form": "защитено",
+        "derived_from": "защитен",
+        "we_would_say": "защи`тено",
+        "sources_say": "защите`но"
+      },
+      {
+        "lemma": "известен",
+        "form": "известено",
+        "derived_from": "известен",
+        "we_would_say": "изве`стено",
+        "sources_say": "известе`но"
+      },
+      {
+        "lemma": "оперен",
+        "form": "оперено",
+        "derived_from": "оперен",
+        "we_would_say": "о`перено",
+        "sources_say": "опе`рено"
+      }
+    ]
+  },
+  {
+    "inflection_class": "76",
+    "speech_part": "adjective",
+    "slot": "мн.ч.",
+    "lemma_is_monosyllabic": false,
+    "observed": 1107,
+    "would_have_been_wrong": 10,
+    "examples": [
+      {
+        "lemma": "защитен",
+        "form": "защитени",
+        "derived_from": "защитен",
+        "we_would_say": "защи`тени",
+        "sources_say": "защите`ни"
+      },
+      {
+        "lemma": "известен",
+        "form": "известени",
+        "derived_from": "известен",
+        "we_would_say": "изве`стени",
+        "sources_say": "известе`ни"
+      },
+      {
+        "lemma": "лаком",
+        "form": "лакоми",
+        "derived_from": "лакомия",
+        "we_would_say": "лакоми`",
+        "sources_say": "ла`коми"
+      }
+    ]
+  },
+  {
+    "inflection_class": "151tt",
+    "speech_part": "verb_transitive_terminative",
+    "slot": "мин.св.вр., 1л., ед.ч.",
+    "lemma_is_monosyllabic": false,
+    "observed": 24,
+    "would_have_been_wrong": 8,
+    "examples": [
+      {
+        "lemma": "загреба",
+        "form": "загребах",
+        "derived_from": "загреба",
+        "we_would_say": "загреба`х",
+        "sources_say": "загре`бах"
+      },
+      {
+        "lemma": "изгреба",
+        "form": "изгребах",
+        "derived_from": "изгреба",
+        "we_would_say": "изгреба`х",
+        "sources_say": "изгре`бах"
+      },
+      {
+        "lemma": "изгриза",
+        "form": "изгризах",
+        "derived_from": "изгриза",
+        "we_would_say": "изгриза`х",
+        "sources_say": "изгри`зах"
+      }
+    ]
+  },
+  {
+    "inflection_class": "151tt",
+    "speech_part": "verb_transitive_terminative",
+    "slot": "мин.св.вр., 2л., ед.ч.",
+    "lemma_is_monosyllabic": false,
+    "observed": 24,
+    "would_have_been_wrong": 8,
+    "examples": [
+      {
+        "lemma": "загреба",
+        "form": "загреба",
+        "derived_from": "загребах",
+        "we_would_say": "загре`ба",
+        "sources_say": "загреба`"
+      },
+      {
+        "lemma": "изгреба",
+        "form": "изгреба",
+        "derived_from": "изгребах",
+        "we_would_say": "изгре`ба",
+        "sources_say": "изгреба`"
+      },
+      {
+        "lemma": "изгриза",
+        "form": "изгриза",
+        "derived_from": "изгризах",
+        "we_would_say": "изгри`за",
+        "sources_say": "изгриза`"
+      }
+    ]
+  },
+  {
+    "inflection_class": "151tt",
+    "speech_part": "verb_transitive_terminative",
+    "slot": "мин.св.вр., 3л., ед.ч.",
+    "lemma_is_monosyllabic": false,
+    "observed": 24,
+    "would_have_been_wrong": 8,
+    "examples": [
+      {
+        "lemma": "загреба",
+        "form": "загреба",
+        "derived_from": "загребах",
+        "we_would_say": "загре`ба",
+        "sources_say": "загреба`"
+      },
+      {
+        "lemma": "изгреба",
+        "form": "изгреба",
+        "derived_from": "изгребах",
+        "we_would_say": "изгре`ба",
+        "sources_say": "изгреба`"
+      },
+      {
+        "lemma": "изгриза",
+        "form": "изгриза",
+        "derived_from": "изгризах",
+        "we_would_say": "изгри`за",
+        "sources_say": "изгриза`"
+      }
+    ]
+  },
+  {
+    "inflection_class": "1",
+    "speech_part": "noun_male",
+    "slot": "мн.ч.",
+    "lemma_is_monosyllabic": true,
+    "observed": 353,
+    "would_have_been_wrong": 7,
+    "examples": [
+      {
+        "lemma": "бог",
+        "form": "богове",
+        "derived_from": "бога",
+        "we_would_say": "бо`гове",
+        "sources_say": "богове`"
+      },
+      {
+        "lemma": "вол",
+        "form": "волове",
+        "derived_from": "вола",
+        "we_would_say": "во`лове",
+        "sources_say": "воло`ве"
+      },
+      {
+        "lemma": "грош",
+        "form": "грошове",
+        "derived_from": "гроша",
+        "we_would_say": "гро`шове",
+        "sources_say": "грошо`ве"
+      }
+    ]
+  },
+  {
+    "inflection_class": "41",
+    "speech_part": "noun_female",
+    "slot": "мн.ч.",
+    "lemma_is_monosyllabic": false,
+    "observed": 2296,
+    "would_have_been_wrong": 7,
+    "examples": [
+      {
+        "lemma": "блесна",
+        "form": "блесни",
+        "derived_from": "блесна",
+        "we_would_say": "бле`сни",
+        "sources_say": "блесни`"
+      },
+      {
+        "lemma": "вълна",
+        "form": "вълни",
+        "derived_from": "вълна",
+        "we_would_say": "въ`лни",
+        "sources_say": "вълни`"
+      },
+      {
+        "lemma": "лъжа",
+        "form": "лъжи",
+        "derived_from": "лъжа",
+        "we_would_say": "лъ`жи",
+        "sources_say": "лъжи`"
+      }
+    ]
+  },
+  {
+    "inflection_class": "7",
+    "speech_part": "noun_male",
+    "slot": "ед.ч.",
+    "lemma_is_monosyllabic": false,
+    "observed": 1872,
+    "would_have_been_wrong": 6,
+    "examples": [
+      {
+        "lemma": "завет",
+        "form": "завет",
+        "derived_from": "завета",
+        "we_would_say": "заве`т",
+        "sources_say": "за`вет"
+      },
+      {
+        "lemma": "имам",
+        "form": "имам",
+        "derived_from": "имами",
+        "we_would_say": "има`м",
+        "sources_say": "и`мам"
+      },
+      {
+        "lemma": "колонтитул",
+        "form": "колонтитул",
+        "derived_from": "колонтитула",
+        "we_would_say": "колонти`тул",
+        "sources_say": "коло`нтитул"
+      }
+    ]
+  },
+  {
+    "inflection_class": "69",
+    "speech_part": "noun_neutral",
+    "slot": "мн.ч.",
+    "lemma_is_monosyllabic": false,
+    "observed": 6,
+    "would_have_been_wrong": 6,
+    "examples": [
+      {
+        "lemma": "време",
+        "form": "времена",
+        "derived_from": "време",
+        "we_would_say": "вре`мена",
+        "sources_say": "времена`"
+      },
+      {
+        "lemma": "знаме",
+        "form": "знамена",
+        "derived_from": "знаме",
+        "we_would_say": "зна`мена",
+        "sources_say": "знамена`"
+      },
+      {
+        "lemma": "име",
+        "form": "имена",
+        "derived_from": "име",
+        "we_would_say": "и`мена",
+        "sources_say": "имена`"
+      }
+    ]
+  },
+  {
+    "inflection_class": "42",
+    "speech_part": "noun_female",
+    "slot": "ед.ч. членувано",
+    "lemma_is_monosyllabic": false,
+    "observed": 5,
+    "would_have_been_wrong": 5,
+    "examples": [
+      {
+        "lemma": "лютост",
+        "form": "лютостта",
+        "derived_from": "лютост",
+        "we_would_say": "лю`тостта",
+        "sources_say": "лютостта`"
+      },
+      {
+        "lemma": "младеж",
+        "form": "младежта",
+        "derived_from": "младеж",
+        "we_would_say": "младе`жта",
+        "sources_say": "младежта`"
+      },
+      {
+        "lemma": "неприязън",
+        "form": "неприязънта",
+        "derived_from": "неприязън",
+        "we_would_say": "неприя`зънта",
+        "sources_say": "неприязънта`"
+      }
+    ]
+  },
+  {
+    "inflection_class": "7",
+    "speech_part": "noun_male",
+    "slot": "ед.ч. непълен член",
+    "lemma_is_monosyllabic": false,
+    "observed": 1456,
+    "would_have_been_wrong": 5,
+    "examples": [
+      {
+        "lemma": "завет",
+        "form": "завета",
+        "derived_from": "завет",
+        "we_would_say": "за`вета",
+        "sources_say": "заве`та"
+      },
+      {
+        "lemma": "колонтитул",
+        "form": "колонтитула",
+        "derived_from": "колонтитул",
+        "we_would_say": "коло`нтитула",
+        "sources_say": "колонти`тула"
+      },
+      {
+        "lemma": "портокал",
+        "form": "портокала",
+        "derived_from": "портокал",
+        "we_would_say": "порто`кала",
+        "sources_say": "портока`ла"
+      }
+    ]
+  },
+  {
+    "inflection_class": "7",
+    "speech_part": "noun_male",
+    "slot": "мн.ч.",
+    "lemma_is_monosyllabic": false,
+    "observed": 1864,
+    "would_have_been_wrong": 5,
+    "examples": [
+      {
+        "lemma": "завет",
+        "form": "завети",
+        "derived_from": "завет",
+        "we_would_say": "за`вети",
+        "sources_say": "заве`ти"
+      },
+      {
+        "lemma": "имам",
+        "form": "имами",
+        "derived_from": "имам",
+        "we_would_say": "и`мами",
+        "sources_say": "има`ми"
+      },
+      {
+        "lemma": "портокал",
+        "form": "портокали",
+        "derived_from": "портокал",
+        "we_would_say": "порто`кали",
+        "sources_say": "портока`ли"
+      }
+    ]
+  },
+  {
+    "inflection_class": "7",
+    "speech_part": "noun_male",
+    "slot": "бройна форма",
+    "lemma_is_monosyllabic": false,
+    "observed": 1456,
+    "would_have_been_wrong": 5,
+    "examples": [
+      {
+        "lemma": "завет",
+        "form": "завета",
+        "derived_from": "завет",
+        "we_would_say": "за`вета",
+        "sources_say": "заве`та"
+      },
+      {
+        "lemma": "колонтитул",
+        "form": "колонтитула",
+        "derived_from": "колонтитул",
+        "we_would_say": "коло`нтитула",
+        "sources_say": "колонти`тула"
+      },
+      {
+        "lemma": "портокал",
+        "form": "портокала",
+        "derived_from": "портокал",
+        "we_would_say": "порто`кала",
+        "sources_say": "портока`ла"
+      }
+    ]
+  },
+  {
+    "inflection_class": "7b",
+    "speech_part": "noun_male",
+    "slot": "мн.ч.",
+    "lemma_is_monosyllabic": false,
+    "observed": 69,
+    "would_have_been_wrong": 5,
+    "examples": [
+      {
+        "lemma": "зяпач",
+        "form": "зяпачи",
+        "derived_from": "зяпач",
+        "we_would_say": "зяпа`чи",
+        "sources_say": "зяпачи`"
+      },
+      {
+        "lemma": "мъдрец",
+        "form": "мъдреци",
+        "derived_from": "мъдрец",
+        "we_would_say": "мъдре`ци",
+        "sources_say": "мъдреци`"
+      },
+      {
+        "lemma": "подлец",
+        "form": "подлеци",
+        "derived_from": "подлец",
+        "we_would_say": "подле`ци",
+        "sources_say": "подлеци`"
+      }
+    ]
+  },
+  {
+    "inflection_class": "7b",
+    "speech_part": "noun_male",
+    "slot": "бройна форма",
+    "lemma_is_monosyllabic": false,
+    "observed": 69,
+    "would_have_been_wrong": 5,
+    "examples": [
+      {
+        "lemma": "зяпач",
+        "form": "зяпачи",
+        "derived_from": "зяпач",
+        "we_would_say": "зяпа`чи",
+        "sources_say": "зяпачи`"
+      },
+      {
+        "lemma": "мъдрец",
+        "form": "мъдреци",
+        "derived_from": "мъдрец",
+        "we_would_say": "мъдре`ци",
+        "sources_say": "мъдреци`"
+      },
+      {
+        "lemma": "подлец",
+        "form": "подлеци",
+        "derived_from": "подлец",
+        "we_would_say": "подле`ци",
+        "sources_say": "подлеци`"
+      }
+    ]
+  },
+  {
+    "inflection_class": "186ti",
+    "speech_part": "verb_transitive_imperfective",
+    "slot": "сег.вр., 3л., ед.ч.",
+    "lemma_is_monosyllabic": false,
+    "observed": 18,
+    "would_have_been_wrong": 5,
+    "examples": [
+      {
+        "lemma": "докачам",
+        "form": "докача",
+        "derived_from": "докачам",
+        "we_would_say": "дока`ча",
+        "sources_say": "докача`"
+      },
+      {
+        "lemma": "задържам",
+        "form": "задържа",
+        "derived_from": "задържам",
+        "we_would_say": "задъ`ржа",
+        "sources_say": "задържа`"
+      },
+      {
+        "lemma": "закачам",
+        "form": "закача",
+        "derived_from": "закачам",
+        "we_would_say": "зака`ча",
+        "sources_say": "закача`"
+      }
+    ]
+  },
+  {
+    "inflection_class": "169tt",
+    "speech_part": "verb_transitive_terminative",
+    "slot": "сег.вр., 2л., ед.ч.",
+    "lemma_is_monosyllabic": false,
+    "observed": 5,
+    "would_have_been_wrong": 5,
+    "examples": [
+      {
+        "lemma": "изям",
+        "form": "изядеш",
+        "derived_from": "изям",
+        "we_would_say": "изя`деш",
+        "sources_say": "изяде`ш"
+      },
+      {
+        "lemma": "надям",
+        "form": "надядеш",
+        "derived_from": "надям",
+        "we_would_say": "надя`деш",
+        "sources_say": "надяде`ш"
+      },
+      {
+        "lemma": "наям",
+        "form": "наядеш",
+        "derived_from": "наям",
+        "we_would_say": "ная`деш",
+        "sources_say": "наяде`ш"
+      }
+    ]
+  },
+  {
+    "inflection_class": "79",
+    "speech_part": "adjective",
+    "slot": "м.р.",
+    "lemma_is_monosyllabic": false,
+    "observed": 1678,
+    "would_have_been_wrong": 4,
+    "examples": [
+      {
+        "lemma": "живороден",
+        "form": "живороден",
+        "derived_from": "живородна",
+        "we_would_say": "живоро`ден",
+        "sources_say": "живороде`н"
+      },
+      {
+        "lemma": "задушен",
+        "form": "задушен",
+        "derived_from": "задушна",
+        "we_would_say": "заду`шен",
+        "sources_say": "задуше`н"
+      },
+      {
+        "lemma": "запасен",
+        "form": "запасен",
+        "derived_from": "запасна",
+        "we_would_say": "запа`сен",
+        "sources_say": "запасе`н"
+      }
+    ]
+  },
+  {
+    "inflection_class": "41",
+    "speech_part": "noun_female",
+    "slot": "ед.ч.",
+    "lemma_is_monosyllabic": false,
+    "observed": 2289,
+    "would_have_been_wrong": 4,
+    "examples": [
+      {
+        "lemma": "опека",
+        "form": "опека",
+        "derived_from": "опеки",
+        "we_would_say": "опе`ка",
+        "sources_say": "опека`"
+      },
+      {
+        "lemma": "опера",
+        "form": "опера",
+        "derived_from": "опери",
+        "we_would_say": "о`пера",
+        "sources_say": "опера`"
+      },
+      {
+        "lemma": "основа",
+        "form": "основа",
+        "derived_from": "основи",
+        "we_would_say": "осно`ва",
+        "sources_say": "основа`"
+      }
+    ]
+  },
+  {
+    "inflection_class": "47",
+    "speech_part": "noun_female",
+    "slot": "ед.ч.",
+    "lemma_is_monosyllabic": false,
+    "observed": 538,
+    "would_have_been_wrong": 3,
+    "examples": [
+      {
+        "lemma": "повеля",
+        "form": "повеля",
+        "derived_from": "повели",
+        "we_would_say": "пове`ля",
+        "sources_say": "повеля`"
+      },
+      {
+        "lemma": "подстанция",
+        "form": "подстанция",
+        "derived_from": "подстанции",
+        "we_would_say": "подста`нция",
+        "sources_say": "по`дстанция"
+      },
+      {
+        "lemma": "стая",
+        "form": "стая",
+        "derived_from": "стаи",
+        "we_would_say": "ста`я",
+        "sources_say": "стая`"
+      }
+    ]
+  },
+  {
+    "inflection_class": "72",
+    "speech_part": "noun_neutral",
+    "slot": "мн.ч.",
+    "lemma_is_monosyllabic": false,
+    "observed": 420,
+    "would_have_been_wrong": 3,
+    "examples": [
+      {
+        "lemma": "лозе",
+        "form": "лозя",
+        "derived_from": "лозе",
+        "we_would_say": "ло`зя",
+        "sources_say": "лозя`"
+      },
+      {
+        "lemma": "отстъпление",
+        "form": "отстъпления",
+        "derived_from": "отстъпление",
+        "we_would_say": "отстъ`пления",
+        "sources_say": "отстъпле`ния"
+      },
+      {
+        "lemma": "цвете",
+        "form": "цветя",
+        "derived_from": "цвете",
+        "we_would_say": "цве`тя",
+        "sources_say": "цветя`"
+      }
+    ]
+  },
+  {
+    "inflection_class": "35a",
+    "speech_part": "noun_male",
+    "slot": "мн.ч.",
+    "lemma_is_monosyllabic": true,
+    "observed": 3,
+    "would_have_been_wrong": 3,
+    "examples": [
+      {
+        "lemma": "кон",
+        "form": "коне",
+        "derived_from": "коня",
+        "we_would_say": "ко`не",
+        "sources_say": "коне`"
+      },
+      {
+        "lemma": "крал",
+        "form": "крале",
+        "derived_from": "краля",
+        "we_would_say": "кра`ле",
+        "sources_say": "крале`"
+      },
+      {
+        "lemma": "цар",
+        "form": "царе",
+        "derived_from": "царя",
+        "we_would_say": "ца`ре",
+        "sources_say": "царе`"
+      }
+    ]
+  },
+  {
+    "inflection_class": "1",
+    "speech_part": "noun_male",
+    "slot": "ед.ч. непълен член",
+    "lemma_is_monosyllabic": true,
+    "observed": 459,
+    "would_have_been_wrong": 2,
+    "examples": [
+      {
+        "lemma": "вкус",
+        "form": "вкуса",
+        "derived_from": "вкусове",
+        "we_would_say": "вку`са",
+        "sources_say": "вкуса`"
+      },
+      {
+        "lemma": "тор",
+        "form": "тора",
+        "derived_from": "торове",
+        "we_would_say": "то`ра",
+        "sources_say": "тора`"
+      }
+    ]
+  },
+  {
+    "inflection_class": "1",
+    "speech_part": "noun_male",
+    "slot": "бройна форма",
+    "lemma_is_monosyllabic": true,
+    "observed": 459,
+    "would_have_been_wrong": 2,
+    "examples": [
+      {
+        "lemma": "вкус",
+        "form": "вкуса",
+        "derived_from": "вкусове",
+        "we_would_say": "вку`са",
+        "sources_say": "вкуса`"
+      },
+      {
+        "lemma": "тор",
+        "form": "тора",
+        "derived_from": "торове",
+        "we_would_say": "то`ра",
+        "sources_say": "тора`"
+      }
+    ]
+  },
+  {
+    "inflection_class": "47",
+    "speech_part": "noun_female",
+    "slot": "мн.ч.",
+    "lemma_is_monosyllabic": false,
+    "observed": 537,
+    "would_have_been_wrong": 2,
+    "examples": [
+      {
+        "lemma": "беля",
+        "form": "бели",
+        "derived_from": "беля",
+        "we_would_say": "бе`ли",
+        "sources_say": "бели`"
+      },
+      {
+        "lemma": "подстанция",
+        "form": "подстанции",
+        "derived_from": "подстанция",
+        "we_would_say": "по`дстанции",
+        "sources_say": "подста`нции"
+      }
+    ]
+  },
+  {
+    "inflection_class": "14",
+    "speech_part": "noun_male",
+    "slot": "ед.ч. пълен член",
+    "lemma_is_monosyllabic": true,
+    "observed": 4,
+    "would_have_been_wrong": 2,
+    "examples": [
+      {
+        "lemma": "вълк",
+        "form": "вълкът",
+        "derived_from": "вълци",
+        "we_would_say": "въ`лкът",
+        "sources_say": "вълкъ`т"
+      },
+      {
+        "lemma": "звук",
+        "form": "звукът",
+        "derived_from": "звуци",
+        "we_would_say": "зву`кът",
+        "sources_say": "звукъ`т"
+      }
+    ]
+  },
+  {
+    "inflection_class": "174tt",
+    "speech_part": "verb_transitive_terminative",
+    "slot": "сег.вр., 2л., ед.ч.",
+    "lemma_is_monosyllabic": false,
+    "observed": 15,
+    "would_have_been_wrong": 2,
+    "examples": [
+      {
+        "lemma": "повеля",
+        "form": "повелиш",
+        "derived_from": "повели",
+        "we_would_say": "пове`лиш",
+        "sources_say": "повели`ш"
+      },
+      {
+        "lemma": "подсладя",
+        "form": "подсладиш",
+        "derived_from": "подсладя",
+        "we_would_say": "подсла`диш",
+        "sources_say": "подслади`ш"
+      }
+    ]
+  },
+  {
+    "inflection_class": "145ti",
+    "speech_part": "verb_transitive_imperfective",
+    "slot": "сег.вр., 2л., ед.ч.",
+    "lemma_is_monosyllabic": false,
+    "observed": 2,
+    "would_have_been_wrong": 2,
+    "examples": [
+      {
+        "lemma": "клада",
+        "form": "кладеш",
+        "derived_from": "клада",
+        "we_would_say": "кла`деш",
+        "sources_say": "кладе`ш"
+      },
+      {
+        "lemma": "чета",
+        "form": "четеш",
+        "derived_from": "чета",
+        "we_would_say": "че`теш",
+        "sources_say": "чете`ш"
+      }
+    ]
+  },
+  {
+    "inflection_class": "181tt",
+    "speech_part": "verb_transitive_terminative",
+    "slot": "мин.св.вр., 1л., ед.ч.",
+    "lemma_is_monosyllabic": false,
+    "observed": 2,
+    "would_have_been_wrong": 2,
+    "examples": [
+      {
+        "lemma": "видя",
+        "form": "видях",
+        "derived_from": "видя",
+        "we_would_say": "ви`дях",
+        "sources_say": "видя`х"
+      },
+      {
+        "lemma": "недовидя",
+        "form": "недовидях",
+        "derived_from": "недовидя",
+        "we_would_say": "недови`дях",
+        "sources_say": "недовидя`х"
+      }
+    ]
+  },
+  {
+    "inflection_class": "181tt",
+    "speech_part": "verb_transitive_terminative",
+    "slot": "мин.св.вр., 2л., ед.ч.",
+    "lemma_is_monosyllabic": false,
+    "observed": 2,
+    "would_have_been_wrong": 2,
+    "examples": [
+      {
+        "lemma": "видя",
+        "form": "видя",
+        "derived_from": "видях",
+        "we_would_say": "видя`",
+        "sources_say": "ви`дя"
+      },
+      {
+        "lemma": "недовидя",
+        "form": "недовидя",
+        "derived_from": "недовидях",
+        "we_would_say": "недовидя`",
+        "sources_say": "недови`дя"
+      }
+    ]
+  },
+  {
+    "inflection_class": "181tt",
+    "speech_part": "verb_transitive_terminative",
+    "slot": "мин.св.вр., 3л., ед.ч.",
+    "lemma_is_monosyllabic": false,
+    "observed": 2,
+    "would_have_been_wrong": 2,
+    "examples": [
+      {
+        "lemma": "видя",
+        "form": "видя",
+        "derived_from": "видях",
+        "we_would_say": "видя`",
+        "sources_say": "ви`дя"
+      },
+      {
+        "lemma": "недовидя",
+        "form": "недовидя",
+        "derived_from": "недовидях",
+        "we_would_say": "недовидя`",
+        "sources_say": "недови`дя"
+      }
+    ]
+  },
+  {
+    "inflection_class": "151tt",
+    "speech_part": "verb_transitive_terminative",
+    "slot": "сег.вр., 2л., ед.ч.",
+    "lemma_is_monosyllabic": false,
+    "observed": 2,
+    "would_have_been_wrong": 2,
+    "examples": [
+      {
+        "lemma": "основа",
+        "form": "основеш",
+        "derived_from": "основа",
+        "we_would_say": "осно`веш",
+        "sources_say": "основе`ш"
+      },
+      {
+        "lemma": "подкова",
+        "form": "подковеш",
+        "derived_from": "подкова",
+        "we_would_say": "подко`веш",
+        "sources_say": "подкове`ш"
+      }
+    ]
+  },
+  {
+    "inflection_class": "170tt",
+    "speech_part": "verb_transitive_terminative",
+    "slot": "сег.вр., 2л., ед.ч.",
+    "lemma_is_monosyllabic": false,
+    "observed": 2,
+    "would_have_been_wrong": 2,
+    "examples": [
+      {
+        "lemma": "опера",
+        "form": "опереш",
+        "derived_from": "опера",
+        "we_would_say": "о`переш",
+        "sources_say": "опере`ш"
+      },
+      {
+        "lemma": "подбера",
+        "form": "подбереш",
+        "derived_from": "подбера",
+        "we_would_say": "подбе`реш",
+        "sources_say": "подбере`ш"
+      }
+    ]
+  },
+  {
+    "inflection_class": "1",
+    "speech_part": "noun_male",
+    "slot": "ед.ч.",
+    "lemma_is_monosyllabic": false,
+    "observed": 20,
+    "would_have_been_wrong": 1,
+    "examples": [
+      {
+        "lemma": "компактдиск",
+        "form": "компактдиск",
+        "derived_from": "компактдиска",
+        "we_would_say": "компактди`ск",
+        "sources_say": "компа`ктдиск"
+      }
+    ]
+  },
+  {
+    "inflection_class": "1",
+    "speech_part": "noun_male",
+    "slot": "ед.ч. непълен член",
+    "lemma_is_monosyllabic": false,
+    "observed": 19,
+    "would_have_been_wrong": 1,
+    "examples": [
+      {
+        "lemma": "компактдиск",
+        "form": "компактдиска",
+        "derived_from": "компактдиск",
+        "we_would_say": "компа`ктдиска",
+        "sources_say": "компактди`ска"
+      }
+    ]
+  },
+  {
+    "inflection_class": "1",
+    "speech_part": "noun_male",
+    "slot": "бройна форма",
+    "lemma_is_monosyllabic": false,
+    "observed": 19,
+    "would_have_been_wrong": 1,
+    "examples": [
+      {
+        "lemma": "компактдиск",
+        "form": "компактдиска",
+        "derived_from": "компактдиск",
+        "we_would_say": "компа`ктдиска",
+        "sources_say": "компактди`ска"
+      }
+    ]
+  },
+  {
+    "inflection_class": "79",
+    "speech_part": "adjective",
+    "slot": "мн.ч.",
+    "lemma_is_monosyllabic": false,
+    "observed": 1677,
+    "would_have_been_wrong": 1,
+    "examples": [
+      {
+        "lemma": "благовонен",
+        "form": "благовонни",
+        "derived_from": "благовонна",
+        "we_would_say": "благово`нни",
+        "sources_say": "благо`вонни"
+      }
+    ]
+  },
+  {
+    "inflection_class": "39",
+    "speech_part": "noun_male",
+    "slot": "ед.ч.",
+    "lemma_is_monosyllabic": false,
+    "observed": 92,
+    "would_have_been_wrong": 1,
+    "examples": [
+      {
+        "lemma": "съдия",
+        "form": "съдия",
+        "derived_from": "съдии",
+        "we_would_say": "съди`я",
+        "sources_say": "съдия`"
+      }
+    ]
+  },
+  {
+    "inflection_class": "7",
+    "speech_part": "noun_male",
+    "slot": "ед.ч. пълен член",
+    "lemma_is_monosyllabic": true,
+    "observed": 31,
+    "would_have_been_wrong": 1,
+    "examples": [
+      {
+        "lemma": "зъб",
+        "form": "зъбът",
+        "derived_from": "зъби",
+        "we_would_say": "зъ`бът",
+        "sources_say": "зъбъ`т"
+      }
+    ]
+  },
+  {
+    "inflection_class": "65",
+    "speech_part": "noun_neutral",
+    "slot": "ед.ч.",
+    "lemma_is_monosyllabic": false,
+    "observed": 233,
+    "would_have_been_wrong": 1,
+    "examples": [
+      {
+        "lemma": "филе",
+        "form": "филе",
+        "derived_from": "филета",
+        "we_would_say": "филе`",
+        "sources_say": "фи`ле"
+      }
+    ]
+  },
+  {
+    "inflection_class": "65",
+    "speech_part": "noun_neutral",
+    "slot": "мн.ч.",
+    "lemma_is_monosyllabic": false,
+    "observed": 233,
+    "would_have_been_wrong": 1,
+    "examples": [
+      {
+        "lemma": "филе",
+        "form": "филета",
+        "derived_from": "филе",
+        "we_would_say": "фи`лета",
+        "sources_say": "филе`та"
+      }
+    ]
+  },
+  {
+    "inflection_class": "76",
+    "speech_part": "adjective",
+    "slot": "м.р. непълен член",
+    "lemma_is_monosyllabic": false,
+    "observed": 7,
+    "would_have_been_wrong": 1,
+    "examples": [
+      {
+        "lemma": "лаком",
+        "form": "лакомия",
+        "derived_from": "лакоми",
+        "we_would_say": "ла`комия",
+        "sources_say": "лакоми`я"
+      }
+    ]
+  },
+  {
+    "inflection_class": "85",
+    "speech_part": "adjective",
+    "slot": "мн.ч.",
+    "lemma_is_monosyllabic": false,
+    "observed": 60,
+    "would_have_been_wrong": 1,
+    "examples": [
+      {
+        "lemma": "безпартиен",
+        "form": "безпартийни",
+        "derived_from": "безпартийна",
+        "we_would_say": "безпарти`йни",
+        "sources_say": "безпа`ртийни"
+      }
+    ]
+  },
+  {
+    "inflection_class": "72",
+    "speech_part": "noun_neutral",
+    "slot": "ед.ч.",
+    "lemma_is_monosyllabic": false,
+    "observed": 418,
+    "would_have_been_wrong": 1,
+    "examples": [
+      {
+        "lemma": "отстъпление",
+        "form": "отстъпление",
+        "derived_from": "отстъпления",
+        "we_would_say": "отстъпле`ние",
+        "sources_say": "отстъ`пление"
+      }
+    ]
+  },
+  {
+    "inflection_class": "7b",
+    "speech_part": "noun_male",
+    "slot": "мн.ч.",
+    "lemma_is_monosyllabic": true,
+    "observed": 1,
+    "would_have_been_wrong": 1,
+    "examples": [
+      {
+        "lemma": "жрец",
+        "form": "жреци",
+        "derived_from": "жреца",
+        "we_would_say": "жре`ци",
+        "sources_say": "жреци`"
+      }
+    ]
+  },
+  {
+    "inflection_class": "7b",
+    "speech_part": "noun_male",
+    "slot": "бройна форма",
+    "lemma_is_monosyllabic": true,
+    "observed": 1,
+    "would_have_been_wrong": 1,
+    "examples": [
+      {
+        "lemma": "жрец",
+        "form": "жреци",
+        "derived_from": "жреца",
+        "we_would_say": "жре`ци",
+        "sources_say": "жреци`"
+      }
+    ]
+  },
+  {
+    "inflection_class": "1a",
+    "speech_part": "noun_male",
+    "slot": "мн.ч.",
+    "lemma_is_monosyllabic": true,
+    "observed": 12,
+    "would_have_been_wrong": 1,
+    "examples": [
+      {
+        "lemma": "поп",
+        "form": "попове",
+        "derived_from": "попа",
+        "we_would_say": "по`пове",
+        "sources_say": "попо`ве"
+      }
+    ]
+  },
+  {
+    "inflection_class": "1a",
+    "speech_part": "noun_male",
+    "slot": "бройна форма",
+    "lemma_is_monosyllabic": true,
+    "observed": 12,
+    "would_have_been_wrong": 1,
+    "examples": [
+      {
+        "lemma": "поп",
+        "form": "попове",
+        "derived_from": "попа",
+        "we_would_say": "по`пове",
+        "sources_say": "попо`ве"
+      }
+    ]
+  },
+  {
+    "inflection_class": "38",
+    "speech_part": "noun_male",
+    "slot": "мн.ч.",
+    "lemma_is_monosyllabic": false,
+    "observed": 10,
+    "would_have_been_wrong": 1,
+    "examples": [
+      {
+        "lemma": "паша",
+        "form": "паши",
+        "derived_from": "паша",
+        "we_would_say": "па`ши",
+        "sources_say": "паши`"
+      }
+    ]
+  },
+  {
+    "inflection_class": "38",
+    "speech_part": "noun_male",
+    "slot": "бройна форма",
+    "lemma_is_monosyllabic": false,
+    "observed": 10,
+    "would_have_been_wrong": 1,
+    "examples": [
+      {
+        "lemma": "паша",
+        "form": "паши",
+        "derived_from": "паша",
+        "we_would_say": "па`ши",
+        "sources_say": "паши`"
+      }
+    ]
+  },
+  {
+    "inflection_class": "41a",
+    "speech_part": "noun_female",
+    "slot": "мн.ч.",
+    "lemma_is_monosyllabic": false,
+    "observed": 60,
+    "would_have_been_wrong": 1,
+    "examples": [
+      {
+        "lemma": "душа",
+        "form": "души",
+        "derived_from": "душа",
+        "we_would_say": "ду`ши",
+        "sources_say": "души`"
+      }
+    ]
+  },
+  {
+    "inflection_class": "84",
+    "speech_part": "adjective",
+    "slot": "м.р.",
+    "lemma_is_monosyllabic": false,
+    "observed": 8,
+    "would_have_been_wrong": 1,
+    "examples": [
+      {
+        "lemma": "десен",
+        "form": "десен",
+        "derived_from": "десни",
+        "we_would_say": "де`сен",
+        "sources_say": "десе`н"
+      }
+    ]
+  },
+  {
+    "inflection_class": "87",
+    "speech_part": "adjective",
+    "slot": "ср.р.",
+    "lemma_is_monosyllabic": false,
+    "observed": 9,
+    "would_have_been_wrong": 1,
+    "examples": [
+      {
+        "lemma": "врабчи",
+        "form": "врабче",
+        "derived_from": "врабчи",
+        "we_would_say": "вра`бче",
+        "sources_say": "врабче`"
+      }
+    ]
+  },
+  {
+    "inflection_class": "60",
+    "speech_part": "noun_neutral",
+    "slot": "мн.ч.",
+    "lemma_is_monosyllabic": false,
+    "observed": 1,
+    "would_have_been_wrong": 1,
+    "examples": [
+      {
+        "lemma": "чудо",
+        "form": "чудеса",
+        "derived_from": "чудо",
+        "we_would_say": "чу`деса",
+        "sources_say": "чудеса`"
+      }
+    ]
+  },
+  {
+    "inflection_class": "145bti",
+    "speech_part": "verb_transitive_imperfective",
+    "slot": "ед.ч. пълен член",
+    "lemma_is_monosyllabic": true,
+    "observed": 2,
+    "would_have_been_wrong": 1,
+    "examples": [
+      {
+        "lemma": "лъв",
+        "form": "лъвът",
+        "derived_from": "лъвове",
+        "we_would_say": "лъ`вът",
+        "sources_say": "лъвъ`т"
+      }
+    ]
+  },
+  {
+    "inflection_class": "145bti",
+    "speech_part": "verb_transitive_imperfective",
+    "slot": "мн.ч.",
+    "lemma_is_monosyllabic": true,
+    "observed": 1,
+    "would_have_been_wrong": 1,
+    "examples": [
+      {
+        "lemma": "поп",
+        "form": "попове",
+        "derived_from": "попа",
+        "we_would_say": "по`пове",
+        "sources_say": "попо`ве"
+      }
+    ]
+  },
+  {
+    "inflection_class": "51",
+    "speech_part": "noun_female",
+    "slot": "ед.ч. членувано",
+    "lemma_is_monosyllabic": false,
+    "observed": 1,
+    "would_have_been_wrong": 1,
+    "examples": [
+      {
+        "lemma": "съблазън",
+        "form": "съблазънта",
+        "derived_from": "съблазън",
+        "we_would_say": "събла`зънта",
+        "sources_say": "съблазънта`"
+      }
+    ]
+  },
+  {
+    "inflection_class": "19",
+    "speech_part": "noun_male",
+    "slot": "мн.ч.",
+    "lemma_is_monosyllabic": false,
+    "observed": 2,
+    "would_have_been_wrong": 1,
+    "examples": [
+      {
+        "lemma": "момък",
+        "form": "момци",
+        "derived_from": "момък",
+        "we_would_say": "мо`мци",
+        "sources_say": "момци`"
+      }
+    ]
+  },
+  {
+    "inflection_class": "19",
+    "speech_part": "noun_male",
+    "slot": "бройна форма",
+    "lemma_is_monosyllabic": false,
+    "observed": 2,
+    "would_have_been_wrong": 1,
+    "examples": [
+      {
+        "lemma": "момък",
+        "form": "момци",
+        "derived_from": "момък",
+        "we_would_say": "мо`мци",
+        "sources_say": "момци`"
+      }
+    ]
+  },
+  {
+    "inflection_class": "70",
+    "speech_part": "noun_neutral",
+    "slot": "мн.ч.",
+    "lemma_is_monosyllabic": false,
+    "observed": 1,
+    "would_have_been_wrong": 1,
+    "examples": [
+      {
+        "lemma": "небе",
+        "form": "небеса",
+        "derived_from": "небе",
+        "we_would_say": "небе`са",
+        "sources_say": "небеса`"
+      }
+    ]
+  },
+  {
+    "inflection_class": "30",
+    "speech_part": "noun_male",
+    "slot": "мн.ч.",
+    "lemma_is_monosyllabic": false,
+    "observed": 1,
+    "would_have_been_wrong": 1,
+    "examples": [
+      {
+        "lemma": "огън",
+        "form": "огньове",
+        "derived_from": "огън",
+        "we_would_say": "о`гньове",
+        "sources_say": "огньо`ве"
+      }
+    ]
+  },
+  {
+    "inflection_class": "50",
+    "speech_part": "noun_female",
+    "slot": "ед.ч. членувано",
+    "lemma_is_monosyllabic": false,
+    "observed": 1,
+    "would_have_been_wrong": 1,
+    "examples": [
+      {
+        "lemma": "песен",
+        "form": "песента",
+        "derived_from": "песен",
+        "we_would_say": "пе`сента",
+        "sources_say": "песента`"
+      }
+    ]
+  },
+  {
+    "inflection_class": "186ii",
+    "speech_part": "verb_intransitive_imperfective",
+    "slot": "сег.вр., 3л., ед.ч.",
+    "lemma_is_monosyllabic": false,
+    "observed": 2,
+    "would_have_been_wrong": 1,
+    "examples": [
+      {
+        "lemma": "въздържам",
+        "form": "въздържа",
+        "derived_from": "въздържам",
+        "we_would_say": "въздъ`ржа",
+        "sources_say": "въздържа`"
+      }
+    ]
+  },
+  {
+    "inflection_class": "186ti",
+    "speech_part": "verb_transitive_imperfective",
+    "slot": "сег.вр., 1л., ед.ч.",
+    "lemma_is_monosyllabic": false,
+    "observed": 2896,
+    "would_have_been_wrong": 1,
+    "examples": [
+      {
+        "lemma": "пожертвувам",
+        "form": "пожертвувам",
+        "derived_from": "пожертвуваш",
+        "we_would_say": "поже`ртвувам",
+        "sources_say": "пожертву`вам"
+      }
+    ]
+  },
+  {
+    "inflection_class": "186ti",
+    "speech_part": "verb_transitive_imperfective",
+    "slot": "сег.вр., 2л., ед.ч.",
+    "lemma_is_monosyllabic": false,
+    "observed": 2896,
+    "would_have_been_wrong": 1,
+    "examples": [
+      {
+        "lemma": "пожертвувам",
+        "form": "пожертвуваш",
+        "derived_from": "пожертвувам",
+        "we_would_say": "пожертву`ваш",
+        "sources_say": "поже`ртвуваш"
+      }
+    ]
+  },
+  {
+    "inflection_class": "186it",
+    "speech_part": "verb_intransitive_terminative",
+    "slot": "сег.вр., 1л., ед.ч.",
+    "lemma_is_monosyllabic": false,
+    "observed": 67,
+    "would_have_been_wrong": 1,
+    "examples": [
+      {
+        "lemma": "наплаквам",
+        "form": "наплаквам",
+        "derived_from": "наплакваш",
+        "we_would_say": "на`плаквам",
+        "sources_say": "напла`квам"
+      }
+    ]
+  },
+  {
+    "inflection_class": "186it",
+    "speech_part": "verb_intransitive_terminative",
+    "slot": "сег.вр., 2л., ед.ч.",
+    "lemma_is_monosyllabic": false,
+    "observed": 67,
+    "would_have_been_wrong": 1,
+    "examples": [
+      {
+        "lemma": "наплаквам",
+        "form": "наплакваш",
+        "derived_from": "наплаквам",
+        "we_would_say": "напла`кваш",
+        "sources_say": "на`плакваш"
+      }
+    ]
+  },
+  {
+    "inflection_class": "152it",
+    "speech_part": "verb_intransitive_terminative",
+    "slot": "повелително наклонение, ед.ч.",
+    "lemma_is_monosyllabic": false,
+    "observed": 1,
+    "would_have_been_wrong": 1,
+    "examples": [
+      {
+        "lemma": "блесна",
+        "form": "блесни",
+        "derived_from": "блесна",
+        "we_would_say": "бле`сни",
+        "sources_say": "блесни`"
+      }
+    ]
+  },
+  {
+    "inflection_class": "173ti",
+    "speech_part": "verb_transitive_imperfective",
+    "slot": "сег.вр., 2л., ед.ч.",
+    "lemma_is_monosyllabic": false,
+    "observed": 128,
+    "would_have_been_wrong": 1,
+    "examples": [
+      {
+        "lemma": "беля",
+        "form": "белиш",
+        "derived_from": "бели",
+        "we_would_say": "бели`ш",
+        "sources_say": "бе`лиш"
+      }
+    ]
+  },
+  {
+    "inflection_class": "173ti",
+    "speech_part": "verb_transitive_imperfective",
+    "slot": "сег.вр., 3л., ед.ч.",
+    "lemma_is_monosyllabic": false,
+    "observed": 3,
+    "would_have_been_wrong": 1,
+    "examples": [
+      {
+        "lemma": "беля",
+        "form": "бели",
+        "derived_from": "белиш",
+        "we_would_say": "бе`ли",
+        "sources_say": "бели`"
+      }
+    ]
+  },
+  {
+    "inflection_class": "173ti",
+    "speech_part": "verb_transitive_imperfective",
+    "slot": "повелително наклонение, ед.ч.",
+    "lemma_is_monosyllabic": false,
+    "observed": 3,
+    "would_have_been_wrong": 1,
+    "examples": [
+      {
+        "lemma": "беля",
+        "form": "бели",
+        "derived_from": "белиш",
+        "we_would_say": "бе`ли",
+        "sources_say": "бели`"
+      }
+    ]
+  },
+  {
+    "inflection_class": "175ti",
+    "speech_part": "verb_transitive_imperfective",
+    "slot": "сег.вр., 2л., ед.ч.",
+    "lemma_is_monosyllabic": false,
+    "observed": 1,
+    "would_have_been_wrong": 1,
+    "examples": [
+      {
+        "lemma": "тая",
+        "form": "таиш",
+        "derived_from": "тая",
+        "we_would_say": "та`иш",
+        "sources_say": "таи`ш"
+      }
+    ]
+  },
+  {
+    "inflection_class": "174tt",
+    "speech_part": "verb_transitive_terminative",
+    "slot": "мин.св.вр., 1л., ед.ч.",
+    "lemma_is_monosyllabic": false,
+    "observed": 512,
+    "would_have_been_wrong": 1,
+    "examples": [
+      {
+        "lemma": "повеля",
+        "form": "повелих",
+        "derived_from": "повели",
+        "we_would_say": "пове`лих",
+        "sources_say": "повели`х"
+      }
+    ]
+  },
+  {
+    "inflection_class": "174tt",
+    "speech_part": "verb_transitive_terminative",
+    "slot": "сег.вр., 3л., ед.ч.",
+    "lemma_is_monosyllabic": false,
+    "observed": 1,
+    "would_have_been_wrong": 1,
+    "examples": [
+      {
+        "lemma": "повеля",
+        "form": "повели",
+        "derived_from": "повелиш",
+        "we_would_say": "повели`",
+        "sources_say": "пове`ли"
+      }
+    ]
+  },
+  {
+    "inflection_class": "174tt",
+    "speech_part": "verb_transitive_terminative",
+    "slot": "мин.св.вр., 2л., ед.ч.",
+    "lemma_is_monosyllabic": false,
+    "observed": 1,
+    "would_have_been_wrong": 1,
+    "examples": [
+      {
+        "lemma": "повеля",
+        "form": "повели",
+        "derived_from": "повелих",
+        "we_would_say": "повели`",
+        "sources_say": "пове`ли"
+      }
+    ]
+  },
+  {
+    "inflection_class": "174tt",
+    "speech_part": "verb_transitive_terminative",
+    "slot": "мин.св.вр., 3л., ед.ч.",
+    "lemma_is_monosyllabic": false,
+    "observed": 1,
+    "would_have_been_wrong": 1,
+    "examples": [
+      {
+        "lemma": "повеля",
+        "form": "повели",
+        "derived_from": "повелих",
+        "we_would_say": "повели`",
+        "sources_say": "пове`ли"
+      }
+    ]
+  },
+  {
+    "inflection_class": "174tt",
+    "speech_part": "verb_transitive_terminative",
+    "slot": "повелително наклонение, ед.ч.",
+    "lemma_is_monosyllabic": false,
+    "observed": 1,
+    "would_have_been_wrong": 1,
+    "examples": [
+      {
+        "lemma": "повеля",
+        "form": "повели",
+        "derived_from": "повелиш",
+        "we_would_say": "повели`",
+        "sources_say": "пове`ли"
+      }
+    ]
+  },
+  {
+    "inflection_class": "175tt",
+    "speech_part": "verb_transitive_terminative",
+    "slot": "мин.св.вр., 1л., ед.ч.",
+    "lemma_is_monosyllabic": false,
+    "observed": 28,
+    "would_have_been_wrong": 1,
+    "examples": [
+      {
+        "lemma": "стая",
+        "form": "стаих",
+        "derived_from": "стаи",
+        "we_would_say": "ста`их",
+        "sources_say": "стаи`х"
+      }
+    ]
+  },
+  {
+    "inflection_class": "175tt",
+    "speech_part": "verb_transitive_terminative",
+    "slot": "сег.вр., 2л., ед.ч.",
+    "lemma_is_monosyllabic": false,
+    "observed": 1,
+    "would_have_been_wrong": 1,
+    "examples": [
+      {
+        "lemma": "стая",
+        "form": "стаиш",
+        "derived_from": "стаи",
+        "we_would_say": "ста`иш",
+        "sources_say": "стаи`ш"
+      }
+    ]
+  },
+  {
+    "inflection_class": "175tt",
+    "speech_part": "verb_transitive_terminative",
+    "slot": "сег.вр., 3л., ед.ч.",
+    "lemma_is_monosyllabic": false,
+    "observed": 1,
+    "would_have_been_wrong": 1,
+    "examples": [
+      {
+        "lemma": "стая",
+        "form": "стаи",
+        "derived_from": "стаиш",
+        "we_would_say": "стаи`",
+        "sources_say": "ста`и"
+      }
+    ]
+  },
+  {
+    "inflection_class": "175tt",
+    "speech_part": "verb_transitive_terminative",
+    "slot": "мин.св.вр., 2л., ед.ч.",
+    "lemma_is_monosyllabic": false,
+    "observed": 1,
+    "would_have_been_wrong": 1,
+    "examples": [
+      {
+        "lemma": "стая",
+        "form": "стаи",
+        "derived_from": "стаих",
+        "we_would_say": "стаи`",
+        "sources_say": "ста`и"
+      }
+    ]
+  },
+  {
+    "inflection_class": "175tt",
+    "speech_part": "verb_transitive_terminative",
+    "slot": "мин.св.вр., 3л., ед.ч.",
+    "lemma_is_monosyllabic": false,
+    "observed": 1,
+    "would_have_been_wrong": 1,
+    "examples": [
+      {
+        "lemma": "стая",
+        "form": "стаи",
+        "derived_from": "стаих",
+        "we_would_say": "стаи`",
+        "sources_say": "ста`и"
+      }
+    ]
+  },
+  {
+    "inflection_class": "162ii",
+    "speech_part": "verb_intransitive_imperfective",
+    "slot": "сег.вр., 1л., ед.ч.",
+    "lemma_is_monosyllabic": false,
+    "observed": 6,
+    "would_have_been_wrong": 1,
+    "examples": [
+      {
+        "lemma": "мая",
+        "form": "мая",
+        "derived_from": "маеш",
+        "we_would_say": "ма`я",
+        "sources_say": "мая`"
+      }
+    ]
+  },
+  {
+    "inflection_class": "162ii",
+    "speech_part": "verb_intransitive_imperfective",
+    "slot": "мин.св.вр., 1л., ед.ч.",
+    "lemma_is_monosyllabic": false,
+    "observed": 6,
+    "would_have_been_wrong": 1,
+    "examples": [
+      {
+        "lemma": "трая",
+        "form": "траях",
+        "derived_from": "трая",
+        "we_would_say": "тра`ях",
+        "sources_say": "трая`х"
+      }
+    ]
+  },
+  {
+    "inflection_class": "162ii",
+    "speech_part": "verb_intransitive_imperfective",
+    "slot": "мин.св.вр., 2л., ед.ч.",
+    "lemma_is_monosyllabic": false,
+    "observed": 6,
+    "would_have_been_wrong": 1,
+    "examples": [
+      {
+        "lemma": "трая",
+        "form": "трая",
+        "derived_from": "траях",
+        "we_would_say": "трая`",
+        "sources_say": "тра`я"
+      }
+    ]
+  },
+  {
+    "inflection_class": "162ii",
+    "speech_part": "verb_intransitive_imperfective",
+    "slot": "мин.св.вр., 3л., ед.ч.",
+    "lemma_is_monosyllabic": false,
+    "observed": 6,
+    "would_have_been_wrong": 1,
+    "examples": [
+      {
+        "lemma": "трая",
+        "form": "трая",
+        "derived_from": "траях",
+        "we_would_say": "трая`",
+        "sources_say": "тра`я"
+      }
+    ]
+  },
+  {
+    "inflection_class": "173tt",
+    "speech_part": "verb_transitive_terminative",
+    "slot": "мин.св.вр., 1л., ед.ч.",
+    "lemma_is_monosyllabic": false,
+    "observed": 452,
+    "would_have_been_wrong": 1,
+    "examples": [
+      {
+        "lemma": "изостря",
+        "form": "изострих",
+        "derived_from": "изострил",
+        "we_would_say": "изостри`х",
+        "sources_say": "изо`стрих"
+      }
+    ]
+  },
+  {
+    "inflection_class": "173tt",
+    "speech_part": "verb_transitive_terminative",
+    "slot": "пр.накл., мин.св.вр., 3л., ед.ч., м.р.",
+    "lemma_is_monosyllabic": false,
+    "observed": 452,
+    "would_have_been_wrong": 1,
+    "examples": [
+      {
+        "lemma": "изостря",
+        "form": "изострил",
+        "derived_from": "изострих",
+        "we_would_say": "изо`стрил",
+        "sources_say": "изостри`л"
+      }
+    ]
+  },
+  {
+    "inflection_class": "173tt",
+    "speech_part": "verb_transitive_terminative",
+    "slot": "мин.деят.св.прич. м.р.",
+    "lemma_is_monosyllabic": false,
+    "observed": 452,
+    "would_have_been_wrong": 1,
+    "examples": [
+      {
+        "lemma": "изостря",
+        "form": "изострил",
+        "derived_from": "изострих",
+        "we_would_say": "изо`стрил",
+        "sources_say": "изостри`л"
+      }
+    ]
+  },
+  {
+    "inflection_class": "178aii",
+    "speech_part": "verb_intransitive_imperfective",
+    "slot": "мин.св.вр., 1л., ед.ч.",
+    "lemma_is_monosyllabic": false,
+    "observed": 2,
+    "would_have_been_wrong": 1,
+    "examples": [
+      {
+        "lemma": "буча",
+        "form": "бучах",
+        "derived_from": "буча",
+        "we_would_say": "бу`чах",
+        "sources_say": "буча`х"
+      }
+    ]
+  },
+  {
+    "inflection_class": "178aii",
+    "speech_part": "verb_intransitive_imperfective",
+    "slot": "мин.св.вр., 2л., ед.ч.",
+    "lemma_is_monosyllabic": false,
+    "observed": 2,
+    "would_have_been_wrong": 1,
+    "examples": [
+      {
+        "lemma": "буча",
+        "form": "буча",
+        "derived_from": "бучах",
+        "we_would_say": "буча`",
+        "sources_say": "бу`ча"
+      }
+    ]
+  },
+  {
+    "inflection_class": "178aii",
+    "speech_part": "verb_intransitive_imperfective",
+    "slot": "мин.св.вр., 3л., ед.ч.",
+    "lemma_is_monosyllabic": false,
+    "observed": 2,
+    "would_have_been_wrong": 1,
+    "examples": [
+      {
+        "lemma": "буча",
+        "form": "буча",
+        "derived_from": "бучах",
+        "we_would_say": "буча`",
+        "sources_say": "бу`ча"
+      }
+    ]
+  },
+  {
+    "inflection_class": "152ii",
+    "speech_part": "verb_intransitive_imperfective",
+    "slot": "повелително наклонение, ед.ч.",
+    "lemma_is_monosyllabic": false,
+    "observed": 1,
+    "would_have_been_wrong": 1,
+    "examples": [
+      {
+        "lemma": "стена",
+        "form": "стени",
+        "derived_from": "стена",
+        "we_would_say": "сте`ни",
+        "sources_say": "стени`"
+      }
+    ]
+  },
+  {
+    "inflection_class": "176att",
+    "speech_part": "verb_transitive_terminative",
+    "slot": "сег.вр., 2л., ед.ч.",
+    "lemma_is_monosyllabic": false,
+    "observed": 2,
+    "would_have_been_wrong": 1,
+    "examples": [
+      {
+        "lemma": "наближа",
+        "form": "наближиш",
+        "derived_from": "наближа",
+        "we_would_say": "набли`жиш",
+        "sources_say": "наближи`ш"
+      }
+    ]
+  },
+  {
+    "inflection_class": "148tt",
+    "speech_part": "verb_transitive_terminative",
+    "slot": "сег.вр., 2л., ед.ч.",
+    "lemma_is_monosyllabic": false,
+    "observed": 1,
+    "would_have_been_wrong": 1,
+    "examples": [
+      {
+        "lemma": "опека",
+        "form": "опечеш",
+        "derived_from": "опека",
+        "we_would_say": "опе`чеш",
+        "sources_say": "опече`ш"
+      }
+    ]
+  },
+  {
+    "inflection_class": "178ait",
+    "speech_part": "verb_intransitive_terminative",
+    "slot": "мин.св.вр., 1л., ед.ч.",
+    "lemma_is_monosyllabic": false,
+    "observed": 2,
+    "would_have_been_wrong": 1,
+    "examples": [
+      {
+        "lemma": "забуча",
+        "form": "забучах",
+        "derived_from": "забуча",
+        "we_would_say": "забу`чах",
+        "sources_say": "забуча`х"
+      }
+    ]
+  },
+  {
+    "inflection_class": "178ait",
+    "speech_part": "verb_intransitive_terminative",
+    "slot": "мин.св.вр., 2л., ед.ч.",
+    "lemma_is_monosyllabic": false,
+    "observed": 2,
+    "would_have_been_wrong": 1,
+    "examples": [
+      {
+        "lemma": "забуча",
+        "form": "забуча",
+        "derived_from": "забучах",
+        "we_would_say": "забуча`",
+        "sources_say": "забу`ча"
+      }
+    ]
+  },
+  {
+    "inflection_class": "178ait",
+    "speech_part": "verb_intransitive_terminative",
+    "slot": "мин.св.вр., 3л., ед.ч.",
+    "lemma_is_monosyllabic": false,
+    "observed": 2,
+    "would_have_been_wrong": 1,
+    "examples": [
+      {
+        "lemma": "забуча",
+        "form": "забуча",
+        "derived_from": "забучах",
+        "we_would_say": "забуча`",
+        "sources_say": "забу`ча"
+      }
+    ]
+  },
+  {
+    "inflection_class": "181it",
+    "speech_part": "verb_intransitive_terminative",
+    "slot": "мин.св.вр., 1л., ед.ч.",
+    "lemma_is_monosyllabic": false,
+    "observed": 1,
+    "would_have_been_wrong": 1,
+    "examples": [
+      {
+        "lemma": "завидя",
+        "form": "завидях",
+        "derived_from": "завидя",
+        "we_would_say": "зави`дях",
+        "sources_say": "завидя`х"
+      }
+    ]
+  },
+  {
+    "inflection_class": "181it",
+    "speech_part": "verb_intransitive_terminative",
+    "slot": "мин.св.вр., 2л., ед.ч.",
+    "lemma_is_monosyllabic": false,
+    "observed": 1,
+    "would_have_been_wrong": 1,
+    "examples": [
+      {
+        "lemma": "завидя",
+        "form": "завидя",
+        "derived_from": "завидях",
+        "we_would_say": "завидя`",
+        "sources_say": "зави`дя"
+      }
+    ]
+  },
+  {
+    "inflection_class": "181it",
+    "speech_part": "verb_intransitive_terminative",
+    "slot": "мин.св.вр., 3л., ед.ч.",
+    "lemma_is_monosyllabic": false,
+    "observed": 1,
+    "would_have_been_wrong": 1,
+    "examples": [
+      {
+        "lemma": "завидя",
+        "form": "завидя",
+        "derived_from": "завидях",
+        "we_would_say": "завидя`",
+        "sources_say": "зави`дя"
+      }
+    ]
+  },
+  {
+    "inflection_class": "169it",
+    "speech_part": "verb_intransitive_terminative",
+    "slot": "сег.вр., 2л., ед.ч.",
+    "lemma_is_monosyllabic": false,
+    "observed": 1,
+    "would_have_been_wrong": 1,
+    "examples": [
+      {
+        "lemma": "заям",
+        "form": "заядеш",
+        "derived_from": "заям",
+        "we_would_say": "зая`деш",
+        "sources_say": "заяде`ш"
+      }
+    ]
+  },
+  {
+    "inflection_class": "158ti",
+    "speech_part": "verb_transitive_imperfective",
+    "slot": "повелително наклонение, ед.ч.",
+    "lemma_is_monosyllabic": false,
+    "observed": 1,
+    "would_have_been_wrong": 1,
+    "examples": [
+      {
+        "lemma": "лъжа",
+        "form": "лъжи",
+        "derived_from": "лъжа",
+        "we_would_say": "лъ`жи",
+        "sources_say": "лъжи`"
+      }
+    ]
+  },
+  {
+    "inflection_class": "175ii",
+    "speech_part": "verb_intransitive_imperfective",
+    "slot": "сег.вр., 1л., ед.ч.",
+    "lemma_is_monosyllabic": false,
+    "observed": 1,
+    "would_have_been_wrong": 1,
+    "examples": [
+      {
+        "lemma": "струя",
+        "form": "струя",
+        "derived_from": "струял",
+        "we_would_say": "струя`",
+        "sources_say": "стру`я"
+      }
+    ]
+  },
+  {
+    "inflection_class": "175ii",
+    "speech_part": "verb_intransitive_imperfective",
+    "slot": "сег.вр., 2л., ед.ч.",
+    "lemma_is_monosyllabic": false,
+    "observed": 1,
+    "would_have_been_wrong": 1,
+    "examples": [
+      {
+        "lemma": "струя",
+        "form": "струиш",
+        "derived_from": "струи",
+        "we_would_say": "стру`иш",
+        "sources_say": "струи`ш"
+      }
+    ]
+  },
+  {
+    "inflection_class": "175ii",
+    "speech_part": "verb_intransitive_imperfective",
+    "slot": "сег.вр., 3л., ед.ч.",
+    "lemma_is_monosyllabic": false,
+    "observed": 1,
+    "would_have_been_wrong": 1,
+    "examples": [
+      {
+        "lemma": "струя",
+        "form": "струи",
+        "derived_from": "струиш",
+        "we_would_say": "струи`",
+        "sources_say": "стру`и"
+      }
+    ]
+  },
+  {
+    "inflection_class": "175ii",
+    "speech_part": "verb_intransitive_imperfective",
+    "slot": "мин.св.вр., 1л., ед.ч.",
+    "lemma_is_monosyllabic": false,
+    "observed": 1,
+    "would_have_been_wrong": 1,
+    "examples": [
+      {
+        "lemma": "струя",
+        "form": "струих",
+        "derived_from": "струи",
+        "we_would_say": "стру`их",
+        "sources_say": "струи`х"
+      }
+    ]
+  },
+  {
+    "inflection_class": "175ii",
+    "speech_part": "verb_intransitive_imperfective",
+    "slot": "мин.св.вр., 2л., ед.ч.",
+    "lemma_is_monosyllabic": false,
+    "observed": 1,
+    "would_have_been_wrong": 1,
+    "examples": [
+      {
+        "lemma": "струя",
+        "form": "струи",
+        "derived_from": "струих",
+        "we_would_say": "струи`",
+        "sources_say": "стру`и"
+      }
+    ]
+  },
+  {
+    "inflection_class": "175ii",
+    "speech_part": "verb_intransitive_imperfective",
+    "slot": "мин.св.вр., 3л., ед.ч.",
+    "lemma_is_monosyllabic": false,
+    "observed": 1,
+    "would_have_been_wrong": 1,
+    "examples": [
+      {
+        "lemma": "струя",
+        "form": "струи",
+        "derived_from": "струих",
+        "we_would_say": "струи`",
+        "sources_say": "стру`и"
+      }
+    ]
+  },
+  {
+    "inflection_class": "175ii",
+    "speech_part": "verb_intransitive_imperfective",
+    "slot": "пр.накл., сег.вр., 3л., ед.ч., м.р.",
+    "lemma_is_monosyllabic": false,
+    "observed": 1,
+    "would_have_been_wrong": 1,
+    "examples": [
+      {
+        "lemma": "струя",
+        "form": "струял",
+        "derived_from": "струя",
+        "we_would_say": "стру`ял",
+        "sources_say": "струя`л"
+      }
+    ]
+  },
+  {
+    "inflection_class": "176bti",
+    "speech_part": "verb_transitive_imperfective",
+    "slot": "сег.вр., 2л., ед.ч.",
+    "lemma_is_monosyllabic": false,
+    "observed": 1,
+    "would_have_been_wrong": 1,
+    "examples": [
+      {
+        "lemma": "суша",
+        "form": "сушиш",
+        "derived_from": "суши",
+        "we_would_say": "су`шиш",
+        "sources_say": "суши`ш"
+      }
+    ]
+  },
+  {
+    "inflection_class": "176bti",
+    "speech_part": "verb_transitive_imperfective",
+    "slot": "сег.вр., 3л., ед.ч.",
+    "lemma_is_monosyllabic": false,
+    "observed": 1,
+    "would_have_been_wrong": 1,
+    "examples": [
+      {
+        "lemma": "суша",
+        "form": "суши",
+        "derived_from": "сушиш",
+        "we_would_say": "суши`",
+        "sources_say": "су`ши"
+      }
+    ]
+  },
+  {
+    "inflection_class": "176bti",
+    "speech_part": "verb_transitive_imperfective",
+    "slot": "мин.св.вр., 1л., ед.ч.",
+    "lemma_is_monosyllabic": false,
+    "observed": 1,
+    "would_have_been_wrong": 1,
+    "examples": [
+      {
+        "lemma": "суша",
+        "form": "суших",
+        "derived_from": "суши",
+        "we_would_say": "су`ших",
+        "sources_say": "суши`х"
+      }
+    ]
+  },
+  {
+    "inflection_class": "176bti",
+    "speech_part": "verb_transitive_imperfective",
+    "slot": "мин.св.вр., 2л., ед.ч.",
+    "lemma_is_monosyllabic": false,
+    "observed": 1,
+    "would_have_been_wrong": 1,
+    "examples": [
+      {
+        "lemma": "суша",
+        "form": "суши",
+        "derived_from": "суших",
+        "we_would_say": "суши`",
+        "sources_say": "су`ши"
+      }
+    ]
+  },
+  {
+    "inflection_class": "176bti",
+    "speech_part": "verb_transitive_imperfective",
+    "slot": "мин.св.вр., 3л., ед.ч.",
+    "lemma_is_monosyllabic": false,
+    "observed": 1,
+    "would_have_been_wrong": 1,
+    "examples": [
+      {
+        "lemma": "суша",
+        "form": "суши",
+        "derived_from": "суших",
+        "we_would_say": "суши`",
+        "sources_say": "су`ши"
+      }
+    ]
+  },
+  {
+    "inflection_class": "176bti",
+    "speech_part": "verb_transitive_imperfective",
+    "slot": "повелително наклонение, ед.ч.",
+    "lemma_is_monosyllabic": false,
+    "observed": 1,
+    "would_have_been_wrong": 1,
+    "examples": [
+      {
+        "lemma": "суша",
+        "form": "суши",
+        "derived_from": "сушиш",
+        "we_would_say": "суши`",
+        "sources_say": "су`ши"
+      }
+    ]
+  }
+]

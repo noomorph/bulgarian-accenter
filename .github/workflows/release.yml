@@ -1,0 +1,145 @@
+name: Release
+
+on:
+  push:
+    tags: ['v[0-9]+.[0-9]+.[0-9]+']
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+
+      # The tag is the single source of truth for the version. If package.json disagrees, the
+      # two store listings would disagree with each other, and that is not something you want to
+      # discover after publishing.
+      - name: Verify the tag matches package.json
+        run: |
+          pkg="v$(node -p "require('./package.json').version")"
+          if [ "$pkg" != "${GITHUB_REF_NAME}" ]; then
+            echo "::error::tag ${GITHUB_REF_NAME} != package.json ${pkg}"
+            exit 1
+          fi
+
+      - name: Verify CHANGELOG has an entry for this version
+        run: grep -q "## \[${GITHUB_REF_NAME#v}\]" CHANGELOG.md || {
+          echo "::error::CHANGELOG.md has no section for ${GITHUB_REF_NAME#v}"; exit 1; }
+
+      - id: pin
+        run: echo "sha=$(node -p "require('./data/PROVENANCE.json').sha256")" >> "$GITHUB_OUTPUT"
+
+      - uses: actions/cache@v4
+        with:
+          path: .cache/db.sql.gz
+          key: rechnik-dump-${{ steps.pin.outputs.sha }}
+
+      # The dictionary is generated, not committed — build it from the pinned public dump.
+      - run: npm run dict:all
+      - run: npm run dump:check
+
+      - run: npm test
+      - run: npm run build:zip
+      - run: npx web-ext lint --source-dir dist/firefox
+
+      # Attached to the release so the dictionary is always retrievable, even if the upstream dump
+      # (a 2013 file on a site that has been raided before) one day stops being downloadable. A
+      # release asset can also be *removed* on a takedown request — which git history cannot.
+      - name: Attach the built dictionary
+        run: cp data/stress-dict.txt "dist/stress-dict-${GITHUB_REF_NAME}.txt"
+
+      # AMO requires human-readable source when a shipped file is generated — and
+      # data/stress-dict.txt is: a reviewer opening it sees `8ове:3`, not Bulgarian. This archive
+      # is the answer, and it is attached to every release whether AMO asks or not. It is a clean
+      # `git archive` of the tag, which — now that the dictionary is not committed — contains
+      # exactly the scripts that build it and nothing generated. `npm run dict:all` reproduces the
+      # shipped file byte for byte from the public dump pinned in data/PROVENANCE.json.
+      - name: Package source for AMO review
+        run: git archive --format=zip --output="dist/source-${GITHUB_REF_NAME}.zip" HEAD
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: release-artifacts
+          path: |
+            dist/*.zip
+            dist/*.txt
+          if-no-files-found: error
+
+  github-release:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: release-artifacts
+          path: dist
+      - uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            dist/*.zip
+            dist/*.txt
+          generate_release_notes: true
+          draft: true # published by hand, after the store submissions are in
+
+  publish-chrome:
+    needs: build
+    runs-on: ubuntu-latest
+    # A protected environment, not repo-wide secrets: a fork's pull request must never be able to
+    # see these, and a store push wants a human on the button.
+    environment: chrome-web-store
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+      - uses: actions/download-artifact@v4
+        with:
+          name: release-artifacts
+          path: dist
+      - name: Upload to the Chrome Web Store
+        env:
+          EXTENSION_ID: ${{ secrets.CWS_EXTENSION_ID }}
+          CLIENT_ID: ${{ secrets.CWS_CLIENT_ID }}
+          CLIENT_SECRET: ${{ secrets.CWS_CLIENT_SECRET }}
+          REFRESH_TOKEN: ${{ secrets.CWS_REFRESH_TOKEN }}
+        run: |
+          npx --yes chrome-webstore-upload-cli@3 upload \
+            --source "dist/bulgarian-accenter-chrome-${GITHUB_REF_NAME#v}.zip" \
+            --auto-publish
+
+  publish-firefox:
+    needs: build
+    runs-on: ubuntu-latest
+    environment: addons-mozilla-org
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - uses: actions/download-artifact@v4
+        with:
+          name: release-artifacts
+          path: dist
+      - run: npm run build
+      - name: Sign and submit to AMO
+        run: |
+          npx web-ext sign \
+            --source-dir dist/firefox \
+            --channel listed \
+            --upload-source-code "dist/source-${GITHUB_REF_NAME}.zip" \
+            --api-key "$AMO_JWT_ISSUER" \
+            --api-secret "$AMO_JWT_SECRET"
+        env:
+          AMO_JWT_ISSUER: ${{ secrets.AMO_JWT_ISSUER }}
+          AMO_JWT_SECRET: ${{ secrets.AMO_JWT_SECRET }}

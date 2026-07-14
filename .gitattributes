@@ -1,0 +1,9 @@
+* text=auto eol=lf
+
+# data/stress-dict.txt is generated and .gitignore'd, so it should never appear here at all —
+# this is a belt-and-braces guard in case someone force-adds it.
+data/stress-dict.txt linguist-generated=true -diff
+data/derivation-blocked.json linguist-generated=true
+
+# Binary.
+*.png binary

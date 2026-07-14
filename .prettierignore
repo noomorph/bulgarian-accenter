@@ -1,0 +1,12 @@
+dist/
+.cache/
+node_modules/
+data/stress-dict.txt
+data/derivation-blocked.json
+package-lock.json
+
+# Markdown is left alone deliberately. The prose here is dense with nested backticks around
+# Bulgarian words carrying their own backtick stress marks (``у`чих``), and Prettier's
+# normalisation is not safe on it — it will happily reflow a line into meaning something else.
+# It already turned "+ `а` → ..." (concatenation) into a bullet list.
+*.md

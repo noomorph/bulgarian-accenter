@@ -1,0 +1,9 @@
+{
+  "source": "Речник на българския език (Речко) — https://rechnik.chitanka.info/",
+  "generator": "https://github.com/chitanka/rechko",
+  "url": "https://rechnik.chitanka.info/db.sql.gz",
+  "sha256": "83e588c8fdf06e86ac7346afeb52682eb16ec599944162d7212594fe1987eeda",
+  "bytes": 70834811,
+  "fetchedAt": "2026-07-14",
+  "note": "SHA-256 of the gzipped dump that data/stress-dict.txt was built from. `npm run dump:check` verifies a local copy against it."
+}

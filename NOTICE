@@ -1,0 +1,68 @@
+# NOTICE — where the dictionary comes from, and under what terms
+
+`data/stress-dict.txt` is not our data. It is a derived work with a traceable lineage, and that
+lineage carries a copyleft licence. This file records the chain, so that anyone — a user, an AMO
+reviewer, a lawyer — can check it without taking our word for anything.
+
+## The chain
+
+```
+БГ Офис (bgoffice)                     word forms, © 2000–2004 Радостин Раднев
+  https://bgoffice.sourceforge.net/    morphology after Кръстев Б., "Морфология на
+  ↓                                    българския език в 187 типови таблици" (НИ, 1984)
+IDI Spell Checker                      refinement of the BG Office base
+  ↓
+Речко / rechnik.chitanka.info          + stress marks (`name_stressed`, definitions)
+  https://rechnik.chitanka.info/       dump: db.sql.gz, last modified 2013-10-22
+  ↓
+data/stress-dict.txt                   422,238 forms: 94,647 attested, 327,591 derived by us
+```
+
+## Terms
+
+**The word list is copyleft.** БГ Офис licenses its data explicitly, not just its code —
+<https://bgoffice.sourceforge.net/license.html> states that «класифицираните думи» (the
+classified words themselves) are under the GNU GPL v2 or later. A 2010 re-licensing of the
+distributed spellcheck packages made them available under a **disjunctive tri-licence**:
+
+> GPL-2.0-or-later **OR** LGPL-2.0-or-later **OR** MPL-1.1
+
+which is precisely why the BG Office dictionary can ship inside Firefox and Chrome at all. It is
+the same election Debian's `hunspell-bg` and npm's `dictionary-bg` make.
+
+**We take that offer and elect the MPL-1.1.** `data/stress-dict.txt` is distributed under the
+Mozilla Public License 1.1, whose full text is in `data/LICENSE-MPL-1.1.txt`.
+
+In practice that means: **improvements to the dictionary file must flow back** under the same
+licence, and nothing else in this repository is affected. If you fix a stress mark, that fix stays
+free. That seems like the right deal for a dictionary.
+
+This does not affect the extension's own code, which stays MIT (see LICENSE): the tri-licence is
+what makes a copyleft data file shippable alongside permissive code, and it is the same route
+`hunspell-bg` and `dictionary-bg` take.
+
+**The stress marks themselves** are the one layer with no upstream licence. They come from Речко,
+which publishes its database for download (<https://rechnik.chitanka.info/about>: «Скриптовете и
+базата са достъпни за сваляне») but states no terms at all. Two things are worth saying plainly:
+
+- A stress position on a word is a *fact*. Facts are not copyrightable; only an original selection
+  or arrangement is (Directive 96/9/EC Art. 3(1)), and a list of every word in a language sorted
+  alphabetically is not an original selection.
+- The EU *sui generis* database right (Art. 7) is a separate matter and does reach substantial
+  extraction regardless of originality. Its term is 15 years from first making available
+  (Art. 10); the Речко dump has not been regenerated since 2013.
+
+We credit Речко, we do not redistribute its definitions (only word forms and stress positions),
+and we would remove the data on a reasonable request from its maintainers.
+
+## Attribution
+
+- **БГ Офис** — Радостин Раднев — <https://bgoffice.sourceforge.net/>
+- **Речко** — <https://rechnik.chitanka.info/>, generator at <https://github.com/chitanka/rechko>
+
+## What is ours
+
+The ~328k **derived** forms — the second pass that propagates an attested lemma stress across its
+paradigm, the four constraints that keep it honest, and the learned blacklist in
+`data/derivation-blocked.json` — are our work, and are offered under the same terms as the file
+they live in. So is the front-coded file format. See `docs/ARCHITECTURE.md`.
