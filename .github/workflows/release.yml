@@ -97,16 +97,20 @@ jobs:
         with:
           name: release-artifacts
           path: dist
+      # Deliberately no subcommand. v4 dropped `--auto-publish`, and a bare invocation is what now
+      # uploads *and* publishes. Spelling `upload` here would still succeed, still be green, and
+      # simply never ship the version — it would sit staged in the dashboard forever.
       - name: Upload to the Chrome Web Store
         env:
           EXTENSION_ID: ${{ secrets.CWS_EXTENSION_ID }}
+          PUBLISHER_ID: ${{ secrets.CWS_PUBLISHER_ID }}
           CLIENT_ID: ${{ secrets.CWS_CLIENT_ID }}
           CLIENT_SECRET: ${{ secrets.CWS_CLIENT_SECRET }}
           REFRESH_TOKEN: ${{ secrets.CWS_REFRESH_TOKEN }}
         run: |
-          npx --yes chrome-webstore-upload-cli@3 upload \
-            --source "dist/bulgarian-accenter-chrome-${GITHUB_REF_NAME#v}.zip" \
-            --auto-publish
+          : "${PUBLISHER_ID:?add CWS_PUBLISHER_ID to the chrome-web-store environment (Developer Dashboard -> Settings)}"
+          npx --yes chrome-webstore-upload-cli@4 \
+            --source "dist/bulgarian-accenter-chrome-${GITHUB_REF_NAME#v}.zip"
 
   publish-firefox:
     needs: build
