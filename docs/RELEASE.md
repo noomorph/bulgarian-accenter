@@ -61,8 +61,8 @@ The original blocker was "under what terms may we redistribute this dictionary?"
 - ⬜ **Test in a real Firefox.** Firefox MV3 treats host permissions as opt-in in a way Chrome does
   not, and a statically-declared `<all_urls>` content script may not run until the user grants site
   access. If so, the "it just works on bg.wikipedia" story needs onboarding copy for Firefox.
-  Verify this **before** writing the store listing. `strict_min_version` is a conservative `128.0`
-  and can be lowered once tested.
+  Verify this **before** writing the store listing. `strict_min_version` is `142.0`, forced up from
+  a more conservative floor by Android's later support for `data_collection_permissions`.
 
 ## 3. Dictionary provenance — VERIFIED ✅
 
@@ -95,22 +95,14 @@ dump:check` verifies a local copy. The hardcoded `/Users/noomorph/...` path is g
   build → `source.zip` via `git archive` → draft GitHub Release → gated store publish.
 - ✅ Store publishing sits behind **protected environments** (`chrome-web-store`, `addons-mozilla-org`),
   so a fork's PR can never see the credentials and a human is on the button.
-- ✅ **`chrome-web-store` environment created**, with the two guards the paragraph above promises:
-  a required reviewer (@noomorph), and a deployment branch policy that admits **only `v*` tags**. A
-  push to a branch cannot reach the store credentials even if `release.yml` were changed to try.
-- ✅ `CWS_PUBLISHER_ID` — set. It is the one that is easy to miss: `chrome-webstore-upload-cli` v4
-  requires it and v3 did not, and it lives on the Developer Dashboard **Settings** page rather than
-  the item page.
-- ⬜ The remaining four `CWS_*` secrets. Three of them (`CWS_CLIENT_ID`, `CWS_CLIENT_SECRET`,
-  `CWS_REFRESH_TOKEN`) come from a Google OAuth client — see
-  [chrome-webstore-upload-keys](https://github.com/fregante/chrome-webstore-upload-keys). The
-  fourth, `CWS_EXTENSION_ID`, **cannot exist yet**: an item has no ID until it has been created in
-  the dashboard, which is what §5's "do the first submission by hand" means. The order is forced.
-- ⬜ The `addons-mozilla-org` environment and its `AMO_JWT_*` (2).
-- ⛔ **Publisher account: the trader declaration and postal address are both blank.** Neither is a
-  repo concern and neither will fail CI — they fail *distribution*. An undeclared trader status
-  blocks the listing in the EEA, and the address is published on the item page once declared, so
-  decide what you are comfortable making public before filling it in.
+- ✅ Both environments created (`chrome-web-store`, `addons-mozilla-org`) with a required reviewer,
+  and all secrets set — 5 `CWS_*`, 2 `AMO_JWT_*`. Verify with `gh secret list --env <name>` rather
+  than trusting this line; it will go stale before this file does.
+- ⬜ Only `chrome-web-store` restricts deploys to `v*` tags. Add the same branch policy to
+  `addons-mozilla-org` for parity.
+- ⛔ Confirm by hand (git can't see this): the publisher's trader declaration and postal address
+  are filled in, and the first Chrome Dashboard submission has been done — `CWS_EXTENSION_ID`
+  only exists after that.
 
 ## 5. Store submission — TODO ⬜
 
@@ -144,22 +136,12 @@ Automate the *second* release, when only the .zip changes.
 ## 6. Store assets — TODO ⬜
 
 - ✅ `assets/banner.png` (1983×793, 2.50:1)
-- ✅ **Chrome marquee 1400×560** — `assets/promo-marquee-1400x560.png`. The banner downscaled; the
-  0.02% aspect squeeze is invisible, as predicted here.
-- ✅ **Chrome small tile 440×280** — `assets/promo-small-440x280.png`. This one could not be a crop:
-  at 1.57:1 the banner cannot hold the icon and the wordmark side by side, so it is composed —
-  icon over wordmark, the wordmark lifted off the banner by a luminance key so it sits on a clean
-  background rather than a pasted rectangle of the banner's.
-- ⚠️ Both tiles are **24-bit, no alpha** — the store rejects alpha in promo tiles. Keep that if they
-  are ever regenerated. They derive from `assets/banner.png` and `assets/icon.png`: redraw the mark
-  and they go stale silently, because nothing checks them.
-- ✅ Listing copy — description, single purpose, `<all_urls>` justification — lives in
-  `docs/STORE-LISTING.md`, not in a browser form.
-- ⬜ **Screenshots, 1280×800, up to 5 — we have none, and they are what sell the extension.**
-  Real `bg.wikipedia.org`, accents on, `ON` badge visible; a before/after pair; and one showing that
-  **text selection still works**, which is a real differentiator nobody would guess from a
-  description.
-- ⬜ A demo GIF for the README — worth more to a first-time visitor than the entire architecture doc.
+- ✅ Chrome marquee 1400×560 and small tile 440×280 (`assets/promo-*.png`) — 24-bit, no alpha (the
+  store rejects alpha in promo tiles); regenerate from `assets/banner.png` + `assets/icon.png` if
+  the mark ever changes.
+- ✅ Listing copy and the full asset table (including screenshots) live in `docs/STORE-LISTING.md`.
+  One screenshot per store so far; Chrome allows up to 5 and a text-selection shot would still help.
+- ✅ Demo GIF — `assets/demo.gif`, embedded in the README.
 - ✅ Checked the 16px icon, which this section expected to mud. It does not. The bands read as three
   colour blocks at 16px and the ъ stays a recognisable silhouette; what is lost is the gloss and the
   bevel, which carry no meaning. It is softer than a geometric mark would be, and more distinctive —

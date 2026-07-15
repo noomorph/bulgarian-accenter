@@ -56,7 +56,10 @@ const TARGETS = {
     browser_specific_settings: {
       gecko: {
         id: 'bulgarian-accenter@noomorph.github.io',
-        strict_min_version: '128.0',
+        // 142.0, not 140.0: that's desktop's floor for data_collection_permissions, but Firefox
+        // for Android didn't pick up support until 142 — this field is shared between both, so
+        // it has to clear the higher of the two or AMO's linter warns about the Android target.
+        strict_min_version: '142.0',
         // Firefox's data-consent framework. "none" is not a dodge — the extension makes no
         // network requests, keeps no user content, and has no analytics. This is the whole
         // declaration, and it is the honest one.

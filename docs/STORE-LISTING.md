@@ -137,7 +137,8 @@ later if that ever gets enabled. Firefox's equivalent is already declared in the
 | Store icon     | `icons/icon128.png`               | Generated from `assets/icon.png` by `npm run icons` |
 | Small promo    | `assets/promo-small-440x280.png`  | Icon + wordmark, composed; 24-bit, no alpha      |
 | Marquee promo  | `assets/promo-marquee-1400x560.png` | The banner, downscaled; 24-bit, no alpha       |
-| Screenshots    | —                                 | **Still missing.** 1280×800, up to 5.            |
+| Screenshots    | `assets/screenshots/chrome-01-toolbar-popup.png` | 1280×800, toolbar popup with `ON` badge. Up to 5 allowed for Chrome — a before/after and a text-selection shot would still help. |
+| Screenshot (AMO) | `assets/screenshots/firefox-01-before-after.png` | 2400×1800, before/after: accents on with `ON` badge vs. off with `OFF` badge. |
 
 Both promo tiles are derived from `assets/banner.png` and `assets/icon.png`. The store rejects
 alpha in promo tiles, so both are 24-bit RGB — if you ever regenerate them, keep that. Redraw the
