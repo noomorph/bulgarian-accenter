@@ -61,8 +61,8 @@ The original blocker was "under what terms may we redistribute this dictionary?"
 - ⬜ **Test in a real Firefox.** Firefox MV3 treats host permissions as opt-in in a way Chrome does
   not, and a statically-declared `<all_urls>` content script may not run until the user grants site
   access. If so, the "it just works on bg.wikipedia" story needs onboarding copy for Firefox.
-  Verify this **before** writing the store listing. `strict_min_version` is a conservative `128.0`
-  and can be lowered once tested.
+  Verify this **before** writing the store listing. `strict_min_version` is `142.0`, forced up from
+  a more conservative floor by Android's later support for `data_collection_permissions`.
 
 ## 3. Dictionary provenance — VERIFIED ✅
 
@@ -95,9 +95,11 @@ dump:check` verifies a local copy. The hardcoded `/Users/noomorph/...` path is g
   build → `source.zip` via `git archive` → draft GitHub Release → gated store publish.
 - ✅ Store publishing sits behind **protected environments** (`chrome-web-store`, `addons-mozilla-org`),
   so a fork's PR can never see the credentials and a human is on the button.
-- ⬜ Create those two environments and add the secrets: `CWS_*` (5) and `AMO_JWT_*` (2).
-  `CWS_PUBLISHER_ID` is the one that is easy to miss — `chrome-webstore-upload-cli` v4 requires it
-  and v3 did not. It is on the Developer Dashboard **Settings** page, not the item page.
+- ✅ Environments created, all secrets set (5 `CWS_*`, 2 `AMO_JWT_*`) — `gh secret list --env
+  <name>` to check.
+- ⬜ `addons-mozilla-org` has no `v*`-tag branch policy; `chrome-web-store` does. Add one for parity.
+- ⛔ Publisher trader declaration + postal address, and the first Chrome Dashboard submission
+  (required before `CWS_EXTENSION_ID` exists) — confirm both by hand.
 
 ## 5. Store submission — TODO ⬜
 
@@ -131,14 +133,12 @@ Automate the *second* release, when only the .zip changes.
 ## 6. Store assets — TODO ⬜
 
 - ✅ `assets/banner.png` (1983×793, 2.50:1)
-- ⬜ **Chrome marquee 1400×560** — the banner downscales exactly. No recrop needed.
-- ⬜ **Chrome small tile 440×280** (1.57:1) — needs a *new* crop: icon + wordmark, drop the
-  `вятър → вя́тър` chips.
-- ⬜ **Screenshots, 1280×800, up to 5 — we have none, and they are what sell the extension.**
-  Real `bg.wikipedia.org`, accents on, `ON` badge visible; a before/after pair; and one showing that
-  **text selection still works**, which is a real differentiator nobody would guess from a
-  description.
-- ⬜ A demo GIF for the README — worth more to a first-time visitor than the entire architecture doc.
+- ✅ Chrome marquee 1400×560 and small tile 440×280 (`assets/promo-*.png`) — 24-bit, no alpha (the
+  store rejects alpha in promo tiles); regenerate from `assets/banner.png` + `assets/icon.png` if
+  the mark ever changes.
+- ✅ Listing copy and the full asset table (including screenshots) live in `docs/STORE-LISTING.md`.
+  One screenshot per store so far; Chrome allows up to 5 and a text-selection shot would still help.
+- ✅ Demo GIF — `assets/demo.gif`, embedded in the README.
 - ✅ Checked the 16px icon, which this section expected to mud. It does not. The bands read as three
   colour blocks at 16px and the ъ stays a recognisable silhouette; what is lost is the gloss and the
   bevel, which carry no meaning. It is softer than a geometric mark would be, and more distinctive —

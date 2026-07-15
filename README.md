@@ -44,6 +44,10 @@ Open [bg.wikipedia.org](https://bg.wikipedia.org) and click the toolbar icon.
 
 Click the icon to toggle accents on the current tab. The badge shows `ON` or `OFF`.
 
+<p align="center">
+  <img src="assets/demo.gif" alt="Toggling Bulgarian Accenter on nova.bg: OFF shows plain text, ON shows stress marks on the headline and nav" width="640">
+</p>
+
 On a page with no Bulgarian, the badge stays **empty** — not `OFF`. That distinction is deliberate:
 empty means "nothing here to accent", and it is how you tell "the extension is off" apart from
 "this page has no Bulgarian markup for it to find".
