@@ -95,14 +95,11 @@ dump:check` verifies a local copy. The hardcoded `/Users/noomorph/...` path is g
   build → `source.zip` via `git archive` → draft GitHub Release → gated store publish.
 - ✅ Store publishing sits behind **protected environments** (`chrome-web-store`, `addons-mozilla-org`),
   so a fork's PR can never see the credentials and a human is on the button.
-- ✅ Both environments created (`chrome-web-store`, `addons-mozilla-org`) with a required reviewer,
-  and all secrets set — 5 `CWS_*`, 2 `AMO_JWT_*`. Verify with `gh secret list --env <name>` rather
-  than trusting this line; it will go stale before this file does.
-- ⬜ Only `chrome-web-store` restricts deploys to `v*` tags. Add the same branch policy to
-  `addons-mozilla-org` for parity.
-- ⛔ Confirm by hand (git can't see this): the publisher's trader declaration and postal address
-  are filled in, and the first Chrome Dashboard submission has been done — `CWS_EXTENSION_ID`
-  only exists after that.
+- ✅ Environments created, all secrets set (5 `CWS_*`, 2 `AMO_JWT_*`) — `gh secret list --env
+  <name>` to check.
+- ⬜ `addons-mozilla-org` has no `v*`-tag branch policy; `chrome-web-store` does. Add one for parity.
+- ⛔ Publisher trader declaration + postal address, and the first Chrome Dashboard submission
+  (required before `CWS_EXTENSION_ID` exists) — confirm both by hand.
 
 ## 5. Store submission — TODO ⬜
 
