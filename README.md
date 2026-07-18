@@ -27,6 +27,8 @@ ones, not "only for analytics": zero.
 
 - **Chrome** — [Chrome Web Store][chrome-store]
 - **Firefox** — [Firefox Add-ons][firefox-addons]
+- **Safari (iOS)** — not on the App Store, but you can sideload it onto your own iPhone via Xcode.
+  See [docs/SAFARI-IOS.md](docs/SAFARI-IOS.md).
 
 Or to run from source:
 

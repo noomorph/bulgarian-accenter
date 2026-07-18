@@ -1,13 +1,14 @@
 #!/usr/bin/env node
 'use strict';
 /**
- * Builds dist/chrome and dist/firefox from manifest.base.json + the per-target deltas below.
+ * Builds dist/chrome, dist/firefox and dist/safari from manifest.base.json + the per-target
+ * deltas below.
  *
- * Two targets exist because two browsers genuinely disagree, not because we like build steps:
+ * Three targets exist because the browsers genuinely disagree, not because we like build steps:
  *
- *   background — Chrome MV3 wants a `service_worker`; Firefox MV3 wants an event page
+ *   background — Chrome and Safari MV3 want a `service_worker`; Firefox MV3 wants an event page
  *                (`scripts`). Neither accepts the other's key. This is the whole reason a
- *                single manifest.json cannot be shipped to both stores.
+ *                single manifest.json cannot be shipped to all three.
  *
  *   identity   — AMO wants an explicit `browser_specific_settings.gecko.id`, and it is a
  *                one-way door: change it later and every existing install is orphaned.
@@ -17,13 +18,15 @@
  *                chrome-extension://<fixed-id>/data/stress-dict.txt and learn that you have it
  *                installed. `use_dynamic_url` re-randomises that path per session and closes it.
  *                Firefox already randomises the moz-extension:// origin per install, so it needs
- *                nothing here.
+ *                nothing here. Safari's support for `use_dynamic_url` is unverified, so dist/safari
+ *                omits it too rather than ship an unproven flag — this target is for a personal
+ *                device build, not a store listing with many installs to protect.
  *
- * `version` is read from package.json and written into both manifests, so the two can never
- * drift apart — which, left to hand-editing, they always eventually do.
+ * `version` is read from package.json and written into every manifest, so they can never drift
+ * apart — which, left to hand-editing, they always eventually do.
  *
- *   node scripts/build.js            # -> dist/chrome, dist/firefox
- *   node scripts/build.js --zip      # + dist/bulgarian-accenter-{chrome,firefox}-<version>.zip
+ *   node scripts/build.js            # -> dist/chrome, dist/firefox, dist/safari
+ *   node scripts/build.js --zip      # + dist/bulgarian-accenter-{chrome,firefox,safari}-<version>.zip
  */
 const { cpSync, mkdirSync, rmSync, writeFileSync, readFileSync, existsSync } = require('node:fs');
 const { execFileSync } = require('node:child_process');
@@ -66,6 +69,15 @@ const TARGETS = {
         data_collection_permissions: { required: ['none'] },
       },
     },
+    web_accessible_resources: [
+      {
+        resources: ['data/stress-dict.txt'],
+        matches: ['<all_urls>'],
+      },
+    ],
+  },
+  safari: {
+    background: { service_worker: 'src/background.js' },
     web_accessible_resources: [
       {
         resources: ['data/stress-dict.txt'],

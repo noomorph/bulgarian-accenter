@@ -1,6 +1,13 @@
 node_modules/
 *.swp
 
+# Xcode user/build state for the Safari iOS wrapper project (safari/). The .xcodeproj itself is
+# committed; everything below is machine-local and regenerated on open/build.
+safari/**/xcuserdata/
+safari/**/*.xcuserstate
+safari/**/DerivedData/
+safari/**/.DS_Store
+
 # Build output
 dist/
 web-ext-artifacts/
