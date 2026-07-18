@@ -35,12 +35,12 @@ Skipped: `<script>`, `<style>`, `<noscript>`, `<textarea>`, `<input>`, `<select>
 ### Performance
 
 The content script matches `<all_urls>`, so it opens with a single `querySelector` for
-Bulgarian markup and, finding none, does nothing else — the 3.1 MB dictionary is never
+Bulgarian markup and, finding none, does nothing else — the 3.0 MB dictionary is never
 fetched or decoded. That gate is what makes it free on the ~99.9% of pages that aren't
 Bulgarian. A `MutationObserver` (debounced 200 ms) handles content that loads later, and a
 page with no Bulgarian _yet_ keeps a cheap probe running in case an SPA routes to some.
 
-On a page that _is_ Bulgarian, decoding 422k entries costs ~290 ms — an order of magnitude
+On a page that _is_ Bulgarian, decoding 405k entries costs ~290 ms — an order of magnitude
 over a frame, and quite enough to freeze the page visibly. So the decoder is **resumable**:
 `BgDict.createDecoder(text).step(ms)` decodes until its budget runs out and reports whether
 it is done, and `content.js` pumps it in the same 8 ms slices it already used for the DOM
@@ -54,15 +54,15 @@ lookup, which is the case a hash already wins.
 
 ## Dictionary
 
-`data/stress-dict.txt` — **422,238 entries**, of which 94,647 are _attested_ (a source recorded
-the mark) and 327,591 are _derived_ (see below).
+`data/stress-dict.txt` — **404,971 entries**, of which 94,647 are _attested_ (a source recorded
+the mark) and 310,324 are _derived_ (see below).
 
 It is **generated, and not committed**. `npm run dict:fetch` pulls the hash-pinned copy (3 MB);
 `npm run dict:all` rebuilds it from the public dump and reproduces that copy byte for byte — which
 is what the pin is for. See [CONTRIBUTING.md](../CONTRIBUTING.md).
 
 The obvious format, ``{"вятър": "вя`тър"}``, spends most of its bytes twice — once on the key,
-once on a near-copy of it. That was tolerable at 94k entries (3.9 MB); at 422k it is 28.8 MB,
+once on a near-copy of it. That was tolerable at 94k entries (3.9 MB); at 405k it is ~28 MB,
 which is not a file you want to ship, fetch and decode in a content script. So keys are sorted
 and **front-coded**: each line stores only what its key does not share with the previous one.
 
@@ -73,7 +73,7 @@ and **front-coded**: each line stores only what its key does not share with the 
 ```
 
 Bulgarian inflections sort next to each other and share long stems, which is exactly the case
-front-coding is for: **422k entries fit in 3.1 MB — smaller than the old 94k-entry file.** The
+front-coding is for: **405k entries fit in 3.0 MB — smaller than the old 94k-entry file.** The
 leading byte is the shared-prefix length (ASCII `48 + n`); the numbers are the offsets at which
 a mark is spliced into the key. The separator carries the provenance in a byte already being
 spent — `:` attested, `;` derived — so `BgDict.decode(text, false)` reconstructs the
@@ -128,6 +128,15 @@ differently from forms built on the present stem — which is precisely _why_ a 
 ``бу`чал`` for a verb whose aorist is ``буча`л``. So we don't: stress moves freely within a stem
 group and never across one. This alone took verb error from 1.4% to 0.24%.
 
+The imperative gets its own group for a different reason. It is built on the _present_ stem, so it
+is not a third stem — but the mood carries stress independently of the indicative present built on
+that same stem: `беля` → ``бели` ``, `лъжа` → ``лъжи` ``, `суша` → ``суши` ``, and three more.
+Constraint 4's blacklist cannot catch this on its own, because it needs a contradicting witness
+and there almost never is one: of the 17,664 verbs with an imperative slot, only 21 have the
+imperative stress attested at all. It blocked those six and had nothing to say about the rest — so
+``ка`жи`` shipped for a word that is ``кажи` ``. Separating the mood costs 17,267 derived entries,
+which are now unmarked instead of wrongly marked.
+
 **4. Block by evidence, not by permission.** A whitelist of (class, slot) pairs _known_ to be safe
 sounds like the conservative choice and is useless: the witnesses are far too sparse to cover 399
 inflection classes, so almost every cell is merely _unseen_, and rejecting the unseen collapses
@@ -140,7 +149,7 @@ monosyllabic masculine stresses its article while ``ава`нпостът`` does
 alone, those few words poison the slot for every polysyllabic noun in their class; keyed on
 (class, slot, monosyllabic?) they are contained, and `аванпостът` survives.
 
-The 124 blocked cells are written to **`data/derivation-blocked.json`**, with counts and worked
+The 118 blocked cells are written to **`data/derivation-blocked.json`**, with counts and worked
 examples, so they can be read and argued with — the same principle as `data/sql-corrections.json`.
 They are legible as linguistics, not as noise:
 

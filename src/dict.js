@@ -15,7 +15,7 @@
  *     8ове:3               -> аванпостове   offsets [3]
  *
  * Bulgarian inflections sort next to each other and share long stems, which is exactly the
- * case front-coding is for: 428k entries fit in 3.1 MB — *smaller* than the old 94k-entry
+ * case front-coding is for: 405k entries fit in 3.0 MB — *smaller* than the old 94k-entry
  * file. The first byte is the shared-prefix length as an ASCII char (48 + n, capped at 60).
  *
  * The separator carries the entry's provenance, for free, in a byte we were spending anyway:
@@ -84,7 +84,7 @@
   /**
    * A resumable decoder over the front-coded text.
    *
-   * Decoding 422k entries takes ~240 ms, which is far too long to sit on the main thread in one
+   * Decoding 405k entries takes ~240 ms, which is far too long to sit on the main thread in one
    * go: the whole point of this extension is that a page never visibly janks. So the decode is
    * sliced the same way content.js already slices its DOM work — `step(budgetMs)` decodes until
    * the budget runs out and returns false if there is more to do.

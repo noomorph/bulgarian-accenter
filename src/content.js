@@ -232,7 +232,7 @@
   });
 
   /**
-   * Decoding 422k entries costs ~290 ms. Doing that in one go would blow the frame budget by an
+   * Decoding 405k entries costs ~290 ms. Doing that in one go would blow the frame budget by an
    * order of magnitude and jank the page — the one thing this extension refuses to do — so the
    * decoder is stepped in 8 ms slices, like the DOM work.
    *

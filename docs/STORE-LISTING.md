@@ -42,7 +42,7 @@ HOW IT WORKS
 
 Click the toolbar icon to toggle accents on the current tab. The badge shows ON or OFF.
 
-Everything happens on your machine. The extension ships with a dictionary of 422,238 Bulgarian
+Everything happens on your machine. The extension ships with a dictionary of 404,971 Bulgarian
 word forms — it never sends a page, a word, or anything else to a server. It makes zero network
 requests, has no analytics, and collects nothing. There is no account and nothing to sign in to.
 
@@ -65,7 +65,7 @@ there is a one-click report link, and corrections ship in the next version.
 Free, open source, and auditable: github.com/noomorph/bulgarian-accenter
 ```
 
-Every number above is checkable against the repo — 422,238 forms, zero network requests, ~0.2%
+Every number above is checkable against the repo — 404,971 forms, zero network requests, ~0.2%
 wrong. Do not round them up in the listing. An extension whose pitch is "we send nothing anywhere"
 cannot afford a single claim a reviewer can catch out.
 

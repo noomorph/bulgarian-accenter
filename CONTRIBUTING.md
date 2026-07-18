@@ -23,7 +23,7 @@ There is no bundler and no framework. `src/` is what ships, unminified.
 **`data/stress-dict.txt` is not in the repository.** It is generated, and it is `.gitignore`d.
 
 A fresh clone has no dictionary, so the extension will find no words, and the tests that validate
-all 422k entries will **skip** — they say so when they do. There are two ways to get it, and you
+all 405k entries will **skip** — they say so when they do. There are two ways to get it, and you
 almost certainly want the first.
 
 ### `npm run dict:fetch` — the fast path
@@ -73,7 +73,7 @@ regenerate, so that the correction survives the next rebuild and can be reviewed
 1. Add an entry to **`data/sql-corrections.json`** — an explicit list, meant to be read and argued
    with, not a heuristic.
 2. `npm run dict:all`
-3. `npm test` — the invariants must still hold over all 422k entries.
+3. `npm test` — the invariants must still hold over all 405k entries.
 4. Open a PR explaining _why_ the new stress is right. Evidence, not vibes: a dictionary entry, the
    dump's own syllabification column, a native speaker's judgement. We have deliberately kept every
    guess out of the extractor, and that is the property worth protecting.

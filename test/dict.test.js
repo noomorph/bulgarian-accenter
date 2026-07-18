@@ -69,7 +69,7 @@ test('decode survives a malformed line without desyncing the rest', () => {
 // --- guards on the shipped dictionary ---------------------------------------
 // The dictionary is a *generated* file and is not committed: it is built from a public dump by
 // `npm run dict:all` (see CONTRIBUTING.md). Everything above this line tests the format itself and
-// runs on a bare clone; everything below re-validates all 422k real entries and needs the build.
+// runs on a bare clone; everything below re-validates all 405k real entries and needs the build.
 // A contributor fixing a typo in content.js should not have to download 70 MB to run the tests —
 // but CI always has the file, so these guards never silently stop running where it matters.
 const DICT_PATH = join(__dirname, '..', 'data', 'stress-dict.txt');

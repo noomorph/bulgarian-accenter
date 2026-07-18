@@ -73,7 +73,7 @@ jobs:
           path: data
 
       # With the dictionary present, this includes the invariants asserted over every one of the
-      # 422k entries: stripping the marks returns the key, no mark lands anywhere but on a vowel,
+      # 405k entries: stripping the marks returns the key, no mark lands anywhere but on a vowel,
       # every key is a single Cyrillic token, and no derived entry overrules an attested one.
       # They are why a corrupt dictionary cannot render an accent on a consonant. On a bare clone
       # they skip; here they must not.

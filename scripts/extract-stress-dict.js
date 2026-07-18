@@ -35,6 +35,16 @@
  *      dictionary prints "мин. св." and "мин. прич." as separate principal parts. Propagating
  *      across that boundary invents бу`чал for a verb whose aorist is буча`л. So we don't.
  *
+ *      The imperative needs the same treatment for a different reason. It is built on the
+ *      *present* stem, so it is not a third stem — but the mood carries its own stress, and the
+ *      dump proves it: беля -> бели`, лъжа -> лъжи`, суша -> суши`, блесна -> блесни`,
+ *      стена -> стени`, повеля -> повели` all move the stress off the root. Only 21 of the 17,664
+ *      verbs with an imperative slot have that stress attested at all, so constraint 4's
+ *      blacklist has almost no evidence to work from and cannot catch the rest: it blocked those
+ *      six and had nothing to say about кажа, whose class records no imperative stress anywhere.
+ *      The result was ка`жи for a word that is кажи`. Given the choice between a wrong mark and
+ *      no mark, this file has always chosen no mark, so the imperative gets its own group.
+ *
  *   4. BLOCK BY EVIDENCE, NOT BY PERMISSION. A whitelist of (class, slot) pairs known to be safe
  *      sounds right and is useless: the witnesses are far too sparse to cover 399 inflection
  *      classes, so almost every cell is simply *unseen*, and rejecting the unseen collapses the
@@ -298,15 +308,21 @@ function stressPositions(variant) {
  * Bulgarian verbs build one set of forms on the present stem and another on the aorist stem,
  * and the two can carry different stress (у`чих *and* учи`х are both recorded for уча). Stress
  * may be propagated freely within a group and never across one.
+ *
+ * The imperative is _MOOD, not _STEM, on purpose: it is built on the present stem, so it is not a
+ * fourth stem — but it carries stress independently of the indicative present built on that same
+ * stem (беля -> бели`, лъжа -> лъжи`), so it may not borrow from it. See constraint 3 above.
  */
 const AORIST_STEM =
   /мин\.св\.вр|мин\.деят\.св\.прич|мин\.неопр\.вр|мин\.предв\.вр|бъд\.пред\.вр|мин\.страд\.прич/;
 const IMPERFECT_STEM = /мин\.несв\.вр|мин\.деят\.несв\.прич/;
+const IMPERATIVE_MOOD = /повелително/;
 
 function stemGroup(desc, isVerb) {
   if (!isVerb) return 0; // nominals inflect off one stem
   if (AORIST_STEM.test(desc)) return 1;
   if (IMPERFECT_STEM.test(desc)) return 2;
+  if (IMPERATIVE_MOOD.test(desc)) return 4;
   return 3;
 }
 

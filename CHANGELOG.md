@@ -7,6 +7,21 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Fixed
+
+- Imperatives no longer borrow their stress from the indicative present. `кажи` was marked
+  ``ка`жи`` instead of ``кажи` `` because the extractor grouped the imperative with the present
+  tense — both are built on the present stem — and so accepted ``ка`жа`` as evidence for it. The
+  imperative is now its own group, which the dump supports: беля -> бели`, лъжа -> лъжи`,
+  суша -> суши` and three more move the stress off the root. Only 21 of 17,664 verbs have an
+  imperative stress attested at all, so the statistical blacklist had almost no evidence to catch
+  the rest on its own.
+- As a consequence the dictionary is smaller — 404,971 entries (94,647 attested + 310,324
+  derived), down from 422,238. The forms that dropped out are now unmarked rather than wrongly
+  marked. Plural imperatives that are spelled like the present 2nd person plural (`кажете`,
+  `пишете`) still show the present-tense mark; distinguishing them needs sense disambiguation,
+  which this dictionary does not have.
+
 ## [1.0.1] - 2026-07-18
 
 ### Changed
