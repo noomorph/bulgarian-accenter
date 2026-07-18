@@ -3,15 +3,29 @@ name: Release
 on:
   push:
     tags: ['v[0-9]+.[0-9]+.[0-9]+']
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: >-
+          Existing release tag to rebuild, e.g. v1.0.1. Only rebuilds and (re)publishes to
+          Firefox — github-release and publish-chrome only ever run on the tag push, so this
+          can't double-submit to the Chrome Web Store or touch an already-published GitHub
+          release. Use it to retry a failed AMO submission without re-tagging.
+        required: true
 
 permissions:
   contents: read
+
+env:
+  RELEASE_TAG: ${{ github.event_name == 'push' && github.ref_name || inputs.tag }}
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
+        with:
+          ref: ${{ env.RELEASE_TAG }}
       - uses: actions/setup-node@v7
         with:
           node-version-file: .nvmrc
@@ -24,14 +38,14 @@ jobs:
       - name: Verify the tag matches package.json
         run: |
           pkg="v$(node -p "require('./package.json').version")"
-          if [ "$pkg" != "${GITHUB_REF_NAME}" ]; then
-            echo "::error::tag ${GITHUB_REF_NAME} != package.json ${pkg}"
+          if [ "$pkg" != "${RELEASE_TAG}" ]; then
+            echo "::error::tag ${RELEASE_TAG} != package.json ${pkg}"
             exit 1
           fi
 
       - name: Verify CHANGELOG has an entry for this version
-        run: grep -q "## \[${GITHUB_REF_NAME#v}\]" CHANGELOG.md || {
-          echo "::error::CHANGELOG.md has no section for ${GITHUB_REF_NAME#v}"; exit 1; }
+        run: grep -q "## \[${RELEASE_TAG#v}\]" CHANGELOG.md || {
+          echo "::error::CHANGELOG.md has no section for ${RELEASE_TAG#v}"; exit 1; }
 
       # The dictionary is generated, not committed. Take the hash-pinned mirror rather than
       # rebuilding from upstream — see the note in ci.yml.
@@ -45,7 +59,7 @@ jobs:
       # (a 2013 file on a site that has been raided before) one day stops being downloadable. A
       # release asset can also be *removed* on a takedown request — which git history cannot.
       - name: Attach the built dictionary
-        run: cp data/stress-dict.txt "dist/stress-dict-${GITHUB_REF_NAME}.txt"
+        run: cp data/stress-dict.txt "dist/stress-dict-${RELEASE_TAG}.txt"
 
       # AMO requires human-readable source when a shipped file is generated — and
       # data/stress-dict.txt is: a reviewer opening it sees `8ове:3`, not Bulgarian. This archive
@@ -54,7 +68,7 @@ jobs:
       # exactly the scripts that build it and nothing generated. `npm run dict:all` reproduces the
       # shipped file byte for byte from the public dump pinned in data/PROVENANCE.json.
       - name: Package source for AMO review
-        run: git archive --format=zip --output="dist/source-${GITHUB_REF_NAME}.zip" HEAD
+        run: git archive --format=zip --output="dist/source-${RELEASE_TAG}.zip" HEAD
 
       - uses: actions/upload-artifact@v7
         with:
@@ -66,6 +80,7 @@ jobs:
 
   github-release:
     needs: build
+    if: github.event_name == 'push'
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -84,6 +99,7 @@ jobs:
 
   publish-chrome:
     needs: build
+    if: github.event_name == 'push'
     runs-on: ubuntu-latest
     # A protected environment, not repo-wide secrets: a fork's pull request must never be able to
     # see these, and a store push wants a human on the button.
@@ -118,6 +134,8 @@ jobs:
     environment: addons-mozilla-org
     steps:
       - uses: actions/checkout@v7
+        with:
+          ref: ${{ env.RELEASE_TAG }}
       - uses: actions/setup-node@v7
         with:
           node-version-file: .nvmrc
@@ -133,13 +151,13 @@ jobs:
       - name: Unpack the already-built Firefox extension
         run: |
           mkdir -p dist/firefox
-          unzip -q "dist/bulgarian-accenter-firefox-${GITHUB_REF_NAME#v}.zip" -d dist/firefox
+          unzip -q "dist/bulgarian-accenter-firefox-${RELEASE_TAG#v}.zip" -d dist/firefox
       - name: Sign and submit to AMO
         run: |
           npx web-ext sign \
             --source-dir dist/firefox \
             --channel listed \
-            --upload-source-code "dist/source-${GITHUB_REF_NAME}.zip" \
+            --upload-source-code "dist/source-${RELEASE_TAG}.zip" \
             --api-key "$AMO_JWT_ISSUER" \
             --api-secret "$AMO_JWT_SECRET"
         env:
