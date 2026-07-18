@@ -127,7 +127,13 @@ jobs:
         with:
           name: release-artifacts
           path: dist
-      - run: npm run build
+      # Reuse the zip the `build` job already produced and AMO-linted, rather than rebuilding:
+      # a fresh `npm run build` here has no dictionary to build from (only the zips were carried
+      # over as artifacts) and would just re-derive a tree that's already sitting in the zip.
+      - name: Unpack the already-built Firefox extension
+        run: |
+          mkdir -p dist/firefox
+          unzip -q "dist/bulgarian-accenter-firefox-${GITHUB_REF_NAME#v}.zip" -d dist/firefox
       - name: Sign and submit to AMO
         run: |
           npx web-ext sign \
