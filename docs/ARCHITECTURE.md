@@ -91,7 +91,7 @@ genuine: a single source form that really does have two phonetic stresses, as co
 stress _position_ for the same spelling (true pronunciation variance, homographs, or plain
 disagreement between the four merged sources), and the generator unions them. We deliberately
 mark _all_ observed positions rather than guessing which is right. This is a known compromise,
-not a bug — see `TZ.md`.
+not a bug.
 
 ## Derived forms (the second pass)
 
@@ -187,7 +187,7 @@ genuine: a single source form that really does have two phonetic stresses, as co
 stress _position_ for the same spelling (true pronunciation variance, homographs, or plain
 disagreement between the four merged sources), and the generator unions them. v1 deliberately
 marks _all_ observed positions rather than guessing which is right. This is a known compromise,
-not a bug — see `TZ.md`.
+not a bug.
 
 ### Misplaced marks, and where they were fixed
 
@@ -244,7 +244,7 @@ Among the casualties were true homographs — different words that merely share 
 | ``ро`ден`` | ро̀ден | native                   |
 | ``роде`н`` | родѐн | born                     |
 
-Marking both is the whole point (see `TZ.md`); the ambiguity is information, not dirt. So both
+Marking both is the whole point; the ambiguity is information, not dirt. So both
 columns feed one pool and the 1,045 flattened-ambiguous entries stand.
 
 ### Regenerating from a fresh dump
