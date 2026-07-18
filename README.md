@@ -6,7 +6,7 @@
   <a href="https://github.com/noomorph/bulgarian-accenter/actions/workflows/ci.yml"><img src="https://github.com/noomorph/bulgarian-accenter/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/code-MIT-blue.svg" alt="Code: MIT"></a>
   <a href="NOTICE"><img src="https://img.shields.io/badge/dictionary-MPL--1.1-orange.svg" alt="Dictionary: MPL-1.1"></a>
-  <img src="https://img.shields.io/badge/dictionary-422%2C238%20forms-green.svg" alt="422,238 word forms">
+  <img src="https://img.shields.io/badge/dictionary-404%2C971%20forms-green.svg" alt="404,971 word forms">
   <img src="https://img.shields.io/badge/network%20requests-0-brightgreen.svg" alt="Zero network requests">
 </p>
 
@@ -19,7 +19,7 @@ This extension puts the mark back:
 
 > **вятър** → **вя̀тър** · **ветрове** → **ветровѐ**
 
-It works on any page, **entirely offline**, from a dictionary of **422,238 word forms** bundled
+It works on any page, **entirely offline**, from a dictionary of **404,971 word forms** bundled
 inside the extension. There is no server. It makes **zero network requests** — not "anonymised"
 ones, not "only for analytics": zero.
 
@@ -89,7 +89,7 @@ text inside `<iframe>`s is not touched.
 
 ## How it works
 
-The short version: front-coding fits 422k entries into 3.1 MB, and a resumable decoder unpacks them
+The short version: front-coding fits 405k entries into 3.0 MB, and a resumable decoder unpacks them
 in 8 ms slices, so arriving on a Bulgarian page costs about one dropped frame rather than fifteen.
 
 The long version — the derivation pass, the four constraints that keep it honest, the learned

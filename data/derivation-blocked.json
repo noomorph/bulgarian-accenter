@@ -1772,23 +1772,6 @@
     ]
   },
   {
-    "inflection_class": "152it",
-    "speech_part": "verb_intransitive_terminative",
-    "slot": "повелително наклонение, ед.ч.",
-    "lemma_is_monosyllabic": false,
-    "observed": 1,
-    "would_have_been_wrong": 1,
-    "examples": [
-      {
-        "lemma": "блесна",
-        "form": "блесни",
-        "derived_from": "блесна",
-        "we_would_say": "бле`сни",
-        "sources_say": "блесни`"
-      }
-    ]
-  },
-  {
     "inflection_class": "173ti",
     "speech_part": "verb_transitive_imperfective",
     "slot": "сег.вр., 2л., ед.ч.",
@@ -1809,23 +1792,6 @@
     "inflection_class": "173ti",
     "speech_part": "verb_transitive_imperfective",
     "slot": "сег.вр., 3л., ед.ч.",
-    "lemma_is_monosyllabic": false,
-    "observed": 3,
-    "would_have_been_wrong": 1,
-    "examples": [
-      {
-        "lemma": "беля",
-        "form": "бели",
-        "derived_from": "белиш",
-        "we_would_say": "бе`ли",
-        "sources_say": "бели`"
-      }
-    ]
-  },
-  {
-    "inflection_class": "173ti",
-    "speech_part": "verb_transitive_imperfective",
-    "slot": "повелително наклонение, ед.ч.",
     "lemma_is_monosyllabic": false,
     "observed": 3,
     "would_have_been_wrong": 1,
@@ -1919,23 +1885,6 @@
         "lemma": "повеля",
         "form": "повели",
         "derived_from": "повелих",
-        "we_would_say": "повели`",
-        "sources_say": "пове`ли"
-      }
-    ]
-  },
-  {
-    "inflection_class": "174tt",
-    "speech_part": "verb_transitive_terminative",
-    "slot": "повелително наклонение, ед.ч.",
-    "lemma_is_monosyllabic": false,
-    "observed": 1,
-    "would_have_been_wrong": 1,
-    "examples": [
-      {
-        "lemma": "повеля",
-        "form": "повели",
-        "derived_from": "повелиш",
         "we_would_say": "повели`",
         "sources_say": "пове`ли"
       }
@@ -2197,23 +2146,6 @@
     ]
   },
   {
-    "inflection_class": "152ii",
-    "speech_part": "verb_intransitive_imperfective",
-    "slot": "повелително наклонение, ед.ч.",
-    "lemma_is_monosyllabic": false,
-    "observed": 1,
-    "would_have_been_wrong": 1,
-    "examples": [
-      {
-        "lemma": "стена",
-        "form": "стени",
-        "derived_from": "стена",
-        "we_would_say": "сте`ни",
-        "sources_say": "стени`"
-      }
-    ]
-  },
-  {
     "inflection_class": "176att",
     "speech_part": "verb_transitive_terminative",
     "slot": "сег.вр., 2л., ед.ч.",
@@ -2363,23 +2295,6 @@
         "derived_from": "заям",
         "we_would_say": "зая`деш",
         "sources_say": "заяде`ш"
-      }
-    ]
-  },
-  {
-    "inflection_class": "158ti",
-    "speech_part": "verb_transitive_imperfective",
-    "slot": "повелително наклонение, ед.ч.",
-    "lemma_is_monosyllabic": false,
-    "observed": 1,
-    "would_have_been_wrong": 1,
-    "examples": [
-      {
-        "lemma": "лъжа",
-        "form": "лъжи",
-        "derived_from": "лъжа",
-        "we_would_say": "лъ`жи",
-        "sources_say": "лъжи`"
       }
     ]
   },
@@ -2582,23 +2497,6 @@
         "lemma": "суша",
         "form": "суши",
         "derived_from": "суших",
-        "we_would_say": "суши`",
-        "sources_say": "су`ши"
-      }
-    ]
-  },
-  {
-    "inflection_class": "176bti",
-    "speech_part": "verb_transitive_imperfective",
-    "slot": "повелително наклонение, ед.ч.",
-    "lemma_is_monosyllabic": false,
-    "observed": 1,
-    "would_have_been_wrong": 1,
-    "examples": [
-      {
-        "lemma": "суша",
-        "form": "суши",
-        "derived_from": "сушиш",
         "we_would_say": "суши`",
         "sources_say": "су`ши"
       }
