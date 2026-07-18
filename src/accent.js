@@ -9,15 +9,25 @@
   if (typeof module === 'object' && module.exports) module.exports = api;
   else root.BgAccent = api;
 })(typeof globalThis !== 'undefined' ? globalThis : this, function () {
-  /** Combining acute accent. Rendered over the preceding letter: а + U+0301 = а́ */
-  const ACCENT = '́';
+  /** Combining grave accent — Bulgarian's own stress-mark convention (not the acute Russian
+   *  dictionaries use). Rendered over the preceding letter: а + U+0300 = а̀ */
+  const ACCENT = '̀';
   /** Marker used by the dictionary, placed directly after the stressed vowel. */
   const MARK = '`';
 
   const VOWELS = new Set('аеиоуъюя');
 
-  /** Cyrillic runs, with U+0301 folded in so an already-accented word stays one token. */
-  const WORD_RE = /[\p{Script=Cyrillic}́]+/gu;
+  /**
+   * Any stress mark we might encounter on a word we did not mark ourselves: our own grave
+   * (U+0300), or the acute (U+0301) that plenty of Bulgarian sources — Wiktionary among them —
+   * use instead. A word already carrying either is already answered; piling our own mark on
+   * top of it, or worse, treating the mark as a token boundary and re-processing the pieces on
+   * either side of it independently, is how a word ends up wearing two or three accents at once.
+   */
+  const ANY_ACCENT_RE = /[̀́]/;
+
+  /** Cyrillic runs, with either accent mark folded in so an already-accented word stays one token. */
+  const WORD_RE = /[\p{Script=Cyrillic}̀́]+/gu;
   const HAS_CYRILLIC_RE = /\p{Script=Cyrillic}/u;
 
   function isVowel(ch) {
@@ -64,7 +74,7 @@
    * for Cyrillic, so the offsets line up.
    */
   function accentWord(token, dict) {
-    if (token.includes(ACCENT)) return null; // already processed — keep idempotent
+    if (ANY_ACCENT_RE.test(token)) return null; // already marked — ours or the page's own — stay idempotent
     const lower = token.toLowerCase();
     if (lower.length !== token.length) return null; // paranoia: offsets would desync
     const entry = dict[lower];

@@ -28,7 +28,7 @@ test('stressOffsets: drops marks that do not follow a vowel', () => {
   assert.deepEqual(A.stressOffsets('борц`и`'), [5]); // keeps only the valid mark
 });
 
-test('accentWord: inserts a combining acute after the stressed vowel', () => {
+test('accentWord: inserts a combining grave after the stressed vowel', () => {
   assert.equal(A.accentWord('вятър', DICT), 'вя' + ACCENT + 'тър');
   assert.equal(A.accentWord('ветрове', DICT), 'ветрове' + ACCENT);
 });
@@ -58,6 +58,23 @@ test('accentWord: skips words whose every mark was invalid', () => {
 test('accentWord: is idempotent — never double-accents', () => {
   const once = A.accentWord('вятър', DICT);
   assert.equal(A.accentWord(once, DICT), null);
+});
+
+test('accentWord: leaves a word alone if it already carries the other accent convention', () => {
+  // Plenty of Bulgarian text in the wild (Wiktionary among it) marks stress with the acute
+  // (U+0301) rather than our own grave (U+0300). Either one means "already answered".
+  const alreadyAcute = 'вя' + '́' + 'тър';
+  assert.equal(A.accentWord(alreadyAcute, DICT), null);
+});
+
+test('accentText: does not fragment a word already marked with the other convention', () => {
+  // Regression: WORD_RE used to fold in only our own mark, so a word already carrying the
+  // *other* one split into pieces at the mark and each piece got independently — and wrongly —
+  // re-looked-up and re-marked, producing a word wearing two or three accents at once
+  // (e.g. "по́мни́̀л" from a source page's "помнѝл").
+  const input = 'Духът на вя' + '́' + 'тър, ветрове';
+  const out = A.accentText(input, DICT);
+  assert.equal(out, 'Духът на вя' + '́' + 'тър, ветрове' + ACCENT);
 });
 
 test('accentText: rewrites known words and leaves everything else untouched', () => {

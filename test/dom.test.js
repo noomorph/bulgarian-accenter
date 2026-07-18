@@ -15,7 +15,7 @@ const SRC = join(__dirname, '..', 'src');
 const DICT_JS = readFileSync(join(SRC, 'dict.js'), 'utf8');
 const ACCENT_JS = readFileSync(join(SRC, 'accent.js'), 'utf8');
 const CONTENT_JS = readFileSync(join(SRC, 'content.js'), 'utf8');
-const ACCENT = '́';
+const ACCENT = '̀';
 
 const DICT = {
   вятър: 'вя`тър',
@@ -196,6 +196,13 @@ test('does not double-accent on repeated passes', async () => {
   const text = textOf(w, '#a');
   assert.equal(text, `вя${ACCENT}тър`);
   assert.equal(text.split(ACCENT).length - 1, 1, 'exactly one accent');
+});
+
+test('leaves a word alone if the page already marked it with the other accent convention', async () => {
+  // Regression: a source page marking stress with acute (U+0301) instead of our own grave
+  // (U+0300) used to get torn apart at the mark and re-accented in pieces.
+  const w = await load('<p id="a" lang="bg">Духът на вя́тър, ветрове</p>');
+  assert.equal(textOf(w, '#a'), `Духът на вя́тър, ветрове${ACCENT}`);
 });
 
 test('boots when Bulgarian appears only after load (SPA route)', async () => {

@@ -17,12 +17,15 @@ accepting them is below.
   rule — a `lang="en"` island inside a `lang="bg"` page is skipped, and a `lang="bg"` island
   nested back inside _that_ is picked up again.
 - Each Cyrillic word is lowercased and looked up in the dictionary. A hit gets a combining
-  acute accent (U+0301) spliced in after the stressed vowel. A miss is left alone — a word the
+  grave accent (U+0300) spliced in after the stressed vowel — Bulgarian's own stress-mark
+  convention, not the acute (U+0301) Russian dictionaries favour. A word already carrying either
+  mark — ours from an earlier pass, or a source page's own acute — is left exactly as it is,
+  rather than torn apart at the mark and re-processed piecemeal. A miss is left alone — a word the
   dictionary does not contain is never guessed at _on the page_. (The dictionary itself now
   contains ~328k forms whose stress was inferred at build time rather than read off a source;
   that inference is bounded and measured, and it is the subject of "Derived forms" below.)
 - Capitalisation survives because only the _offsets_ come from the dictionary; the accent is
-  spliced into the original token (`Вятър` → `Вя́тър`).
+  spliced into the original token (`Вятър` → `Вя̀тър`).
 - Accents are plain text, so text selection, copy-paste and the page's own layout all keep
   working. Toggling off restores the original text exactly.
 
@@ -84,7 +87,7 @@ single Cyrillic token.
 
 **2,375 entries (2.5%) carry more than one stress mark**, for two different reasons. Most are
 genuine: a single source form that really does have two phonetic stresses, as compounds do
-(`а́виоа́с`). The other **1,047** are flattened ambiguity — the sources recorded more than one
+(`а̀виоа̀с`). The other **1,047** are flattened ambiguity — the sources recorded more than one
 stress _position_ for the same spelling (true pronunciation variance, homographs, or plain
 disagreement between the four merged sources), and the generator unions them. We deliberately
 mark _all_ observed positions rather than guessing which is right. This is a known compromise,
@@ -109,9 +112,9 @@ not the stressed one. That last number is the price, and it is a real one: see "
 Four constraints do the work. Each was measured; dropping any one visibly degrades the result.
 
 **1. Witnesses are bound to their lexeme.** A stress is evidence about lemma _L_ only if the
-marked token is itself a form of _L_. Pooling by string instead lets `пи́та` (the flatbread) supply
-the stress for `питах` (a form of `питам`), and scores `весели́я` (plural of `весели́е`) against the
-adjective `ве́селия`. Most of the naive rule's apparent error was this — not a real disagreement
+marked token is itself a form of _L_. Pooling by string instead lets `пѝта` (the flatbread) supply
+the stress for `питах` (a form of `питам`), and scores `веселѝя` (plural of `веселѝе`) against the
+adjective `вѐселия`. Most of the naive rule's apparent error was this — not a real disagreement
 about Bulgarian, just two words spelled alike.
 
 **2. Anchor on the stem, not the suffix.** Appending to a known form is the intuitive rule and it
@@ -143,9 +146,9 @@ They are legible as linguistics, not as noise:
 
 | class                        | slot               | wrong     | why                                                         |
 | ---------------------------- | ------------------ | --------- | ----------------------------------------------------------- |
-| `noun_female` 49             | `ед.ч. членувано`  | 166 / 166 | `-ост` abstracts always stress the article: `безкрайността́` |
-| `noun_neutral` 54            | `мн.ч.`            | 59 / 211  | end-stressed neuter plurals: `блата́`, `белила́`              |
-| `noun_male` 1 (monosyllabic) | `ед.ч. пълен член` | 30 / 455  | `бикъ́т`, `видъ́т` — but not `ава̀нпостът`                     |
+| `noun_female` 49             | `ед.ч. членувано`  | 166 / 166 | `-ост` abstracts always stress the article: `безкрайността̀` |
+| `noun_neutral` 54            | `мн.ч.`            | 59 / 211  | end-stressed neuter plurals: `блата̀`, `белила̀`              |
+| `noun_male` 1 (monosyllabic) | `ед.ч. пълен член` | 30 / 455  | `бикъ̀т`, `видъ̀т` — but not `ава̀нпостът`                     |
 
 An attested stress **always** wins over a derived one; pass 2 can only fill gaps, never overrule.
 So ``бикъ`т`` keeps the stressed article the sources recorded, and is not overwritten by ``би`кът``
@@ -180,7 +183,7 @@ Closing that gap needs a source with more stress data, not a cleverer inference.
 
 **2,375 entries (2.5%) carry more than one stress mark**, for two different reasons. Most are
 genuine: a single source form that really does have two phonetic stresses, as compounds do
-(`а́виоа́с`). The other **1,047** are flattened ambiguity — the sources recorded more than one
+(`а̀виоа̀с`). The other **1,047** are flattened ambiguity — the sources recorded more than one
 stress _position_ for the same spelling (true pronunciation variance, homographs, or plain
 disagreement between the four merged sources), and the generator unions them. v1 deliberately
 marks _all_ observed positions rather than guessing which is right. This is a known compromise,
@@ -189,7 +192,7 @@ not a bug — see `TZ.md`.
 ### Misplaced marks, and where they were fixed
 
 25 `name_stressed` cells in the dump carried the backtick on the wrong side of the vowel
-(``врабц`ите`` instead of ``врабци`те``), which would have rendered an accent on a consonant (`ц́`).
+(``врабц`ите`` instead of ``врабци`те``), which would have rendered an accent on a consonant (`ц̀`).
 All of them are in the curated `name_stressed` column — the prose contains none.
 
 **These are corrected at source.** `scripts/fix-stress-sql.js` rewrites the dump in place (keeping
@@ -211,7 +214,7 @@ which is the correct outcome. The extension never guesses.
 
 The extractor deliberately contains **no repair heuristic**. Shifting a stray mark onto the
 neighbouring vowel looks reasonable and is right most of the time, but it is confidently wrong the
-rest: it invents `защитно́` for a word whose own dictionary entry plainly says `защи́тно`. Corrections
+rest: it invents `защитно̀` for a word whose own dictionary entry plainly says `защѝтно`. Corrections
 belong in a file a human can review, not in a rule that guesses in the dark. All the extractor does
 is _drop_ a mark that isn't after a vowel, as a safety net.
 
@@ -226,20 +229,20 @@ let the former veto the latter for identical spellings. **This was tried and it 
 independent reasons, both measured against this dump:
 
 - Every one of the 24 malformed marks is in `name_stressed`. The prose has **zero**. Ranking the
-  columns would prefer the corrupt source: `защитно` would keep the repaired-from-typo `защитно́`
-  and discard prose's well-formed `защи́тно`.
+  columns would prefer the corrupt source: `защитно` would keep the repaired-from-typo `защитно̀`
+  and discard prose's well-formed `защѝтно`.
 - `name_stressed` is NULL for roughly half the word-forms, so prose is the **only** witness for most
   inflections, and for variants a lexicographer noted by hand (`абзац`'s definition literally reads
-  ``и [[абза`ц]]`` — "and абза́ц"). Vetoing prose destroyed ~227 genuine readings.
+  ``и [[абза`ц]]`` — "and абза̀ц"). Vetoing prose destroyed ~227 genuine readings.
 
 Among the casualties were true homographs — different words that merely share a spelling:
 
 |            |       |                          |
 | ---------- | ----- | ------------------------ |
-| ``ни`ва``  | ни́ва  | a field                  |
-| ``нива` `` | нива́  | plural of ниво, "levels" |
-| ``ро`ден`` | ро́ден | native                   |
-| ``роде`н`` | роде́н | born                     |
+| ``ни`ва``  | нѝва  | a field                  |
+| ``нива` `` | нива̀  | plural of ниво, "levels" |
+| ``ро`ден`` | ро̀ден | native                   |
+| ``роде`н`` | родѐн | born                     |
 
 Marking both is the whole point (see `TZ.md`); the ambiguity is information, not dirt. So both
 columns feed one pool and the 1,045 flattened-ambiguous entries stand.
@@ -293,10 +296,10 @@ is why `npm run dict` raises the heap limit. It takes ~30 s.
   limit that is a deliberate trade rather than an omission.
 - Top frame only — Bulgarian text inside an `<iframe>` is not accented.
 - Pages with no `lang` markup are ignored by design, even if the text is obviously Bulgarian.
-- No homograph resolution: `въ́лна` (wool) and `вълна́` (wave) are the same spelling, and both
+- No homograph resolution: `въ̀лна` (wool) and `вълна̀` (wave) are the same spelling, and both
   marks are shown. Derivation inherits this: `уча` records both ``у`чих`` and ``учи`х``, so the
   derived `учиха` carries both marks too.
 - **58% of lexemes have no stress data at all** in the source, so most of the paradigm space is
   still unreachable — see "The ceiling".
-- U+0301 changes the text content, so the browser's in-page find (Ctrl+F) won't match an
+- U+0300 changes the text content, so the browser's in-page find (Ctrl+F) won't match an
   accented word when you type it unaccented.

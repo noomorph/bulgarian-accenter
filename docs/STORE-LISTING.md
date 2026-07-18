@@ -36,7 +36,7 @@ say what you are reading.
 
 Bulgarian does not print its stress marks, and stress is not predictable from spelling — it is the
 single hardest thing to guess as a learner, and getting it wrong is the fastest way to sound
-foreign. This extension adds the marks back: вятър becomes вя́тър, ветрове becomes ветрове́.
+foreign. This extension adds the marks back: вятър becomes вя̀тър, ветрове becomes ветровѐ.
 
 HOW IT WORKS
 
@@ -48,7 +48,7 @@ requests, has no analytics, and collects nothing. There is no account and nothin
 
 The text stays text. Accents are applied without breaking selection, copy-paste or layout, and
 copying a word gives you the word — not a mangled version of it. Capitalisation survives, so
-Вятър becomes Вя́тър.
+Вятър becomes Вя̀тър.
 
 WHY IT ASKS TO READ EVERY PAGE
 
@@ -77,7 +77,7 @@ Bulgarian Accenter has one purpose: to display stress marks on Bulgarian words o
 Bulgarian does not print its stress marks, and the stress is not predictable from spelling, so a
 reader cannot tell from the page how a word is pronounced. The extension looks each Bulgarian word
 up in a dictionary bundled inside the package and renders the stressed vowel with an accent
-(вятър becomes вя́тър). A toolbar click toggles it on or off for the current tab.
+(вятър becomes вя̀тър). A toolbar click toggles it on or off for the current tab.
 
 It does nothing else. There is no account, no settings page, and no network request.
 ```

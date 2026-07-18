@@ -1,6 +1,6 @@
 'use strict';
 /**
- * Content script. Finds text under lang="bg" and inserts combining acute accents.
+ * Content script. Finds text under lang="bg" and inserts combining grave accents.
  *
  * This runs on <all_urls>, so the first thing it does is check whether the page has any
  * Bulgarian at all. If not, it never fetches or decodes the ~3.1 MB dictionary — that gate is

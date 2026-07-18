@@ -7,6 +7,19 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+### Changed
+
+- Stress is now marked with the combining grave accent (U+0300) instead of the acute (U+0301) —
+  Bulgarian's own orthographic convention, not the one Russian dictionaries use.
+
+### Fixed
+
+- A word already carrying a stress mark — ours from an earlier pass, or a source page's own
+  (acute-marked text is common in the wild) — was treated as a token boundary rather than a whole
+  word: the pieces on either side got looked up and re-marked independently, so an already-accented
+  word could come out wearing two or three accents. It is now left exactly as it is, whichever
+  convention marked it.
+
 ## [1.0.0] - 2026-07-14
 
 First public release.

@@ -13,11 +13,11 @@
 # Bulgarian Accenter
 
 Learning Bulgarian means learning where the stress falls, and written Bulgarian simply does not
-tell you. `вятър` or `вятъ́р`? `ветрове` or `ветрове́`? The word on the page gives you nothing.
+tell you. `вятър` or `вятъ̀р`? `ветрове` or `ветровѐ`? The word on the page gives you nothing.
 
 This extension puts the mark back:
 
-> **вятър** → **вя́тър** · **ветрове** → **ветрове́**
+> **вятър** → **вя̀тър** · **ветрове** → **ветровѐ**
 
 It works on any page, **entirely offline**, from a dictionary of **422,238 word forms** bundled
 inside the extension. There is no server. It makes **zero network requests** — not "anonymised"
@@ -61,7 +61,7 @@ empty means "nothing here to accent", and it is how you tell "the extension is o
 - **Costs nothing on the other 99.9% of the web.** On a page with no Bulgarian markup it runs one
   `querySelector`, finds nothing, and stops. The 3 MB dictionary is never even fetched.
 - **Doesn't break the page.** Accents are plain text spliced into the existing text nodes, so
-  selection, copy-paste and layout keep working. Capitalisation survives (`Вятър` → `Вя́тър`).
+  selection, copy-paste and layout keep working. Capitalisation survives (`Вятър` → `Вя̀тър`).
   Toggling off restores the original text exactly.
 - **Doesn't invent.** A word the dictionary doesn't have is left alone rather than guessed at.
 
@@ -75,7 +75,7 @@ its own inflections. Held out, that is 99.5% exactly right and 0.2% wrong. It is
 trade — without it the extension accents a third of the words on a page instead of most of them,
 which is the entire point of it. [Found one?][wrong] That report is genuinely useful.
 
-**Homographs show both marks.** `въ́лна` (wool) and `вълна́` (wave) are one spelling. Resolving that
+**Homographs show both marks.** `въ̀лна` (wool) and `вълна̀` (wave) are one spelling. Resolving that
 means understanding the sentence, which this does not, so it shows both and lets you pick. The
 ambiguity is information, not dirt.
 
