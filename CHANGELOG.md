@@ -7,6 +7,8 @@ adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+## [1.0.2] - 2026-07-18
+
 ### Fixed
 
 - Imperatives no longer borrow their stress from the indicative present. `кажи` was marked
@@ -63,6 +65,7 @@ First public release.
 - U+0301 changes the text content, so the browser's in-page find (Ctrl+F) will not match an
   accented word typed unaccented.
 
-[Unreleased]: https://github.com/noomorph/bulgarian-accenter/compare/v1.0.1...HEAD
+[Unreleased]: https://github.com/noomorph/bulgarian-accenter/compare/v1.0.2...HEAD
+[1.0.2]: https://github.com/noomorph/bulgarian-accenter/compare/v1.0.1...v1.0.2
 [1.0.1]: https://github.com/noomorph/bulgarian-accenter/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/noomorph/bulgarian-accenter/releases/tag/v1.0.0

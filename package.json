@@ -1,6 +1,6 @@
 {
   "name": "bulgarian-accenter",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "private": true,
   "description": "Browser extension that marks stressed vowels in Bulgarian text, offline.",
   "author": "Yaroslav Serhieiev <noomorph@gmail.com>",
