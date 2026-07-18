@@ -25,9 +25,10 @@ ones, not "only for analytics": zero.
 
 ## Install
 
-_(Store links go here once the listings are live.)_
+- **Chrome** — [Chrome Web Store][chrome-store]
+- **Firefox** — [Firefox Add-ons][firefox-addons]
 
-Meanwhile, or to run from source:
+Or to run from source:
 
 ```sh
 npm ci
@@ -119,3 +120,5 @@ before you reuse the data.
 [rechko]: https://rechnik.chitanka.info/
 
 [wrong]: https://github.com/noomorph/bulgarian-accenter/issues/new?template=wrong_accent.yml
+[chrome-store]: https://chromewebstore.google.com/detail/bulgarian-accenter/mfiiekmdocodofamnajaoeiflelipmok
+[firefox-addons]: https://addons.mozilla.org/en/firefox/addon/bulgarian-accenter/
