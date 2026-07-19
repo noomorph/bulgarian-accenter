@@ -97,6 +97,12 @@ dump:check` verifies a local copy. The hardcoded `/Users/noomorph/...` path is g
   so a fork's PR can never see the credentials and a human is on the button.
 - ✅ Environments created, all secrets set (5 `CWS_*`, 2 `AMO_JWT_*`) — `gh secret list --env
   <name>` to check.
+- ✅ Both store jobs carry `if: github.repository_owner == 'noomorph'`, so `release.yml` is safe to
+  run in a fork **unmodified**: forks receive neither secrets nor environments, and the jobs skip
+  rather than fail. This is what lets a community fork (e.g. `LearnBulgarian/`) stay byte-identical
+  to upstream — no divergence, no merge conflicts on sync. Read the corollary before ever moving
+  this repo: **a transfer to an organisation disables store publishing** until that string is
+  changed by hand, which is the intended safety property and not a bug to fix in a hurry.
 - ⬜ `addons-mozilla-org` has no `v*`-tag branch policy; `chrome-web-store` does. Add one for parity.
 - ⛔ Publisher trader declaration + postal address, and the first Chrome Dashboard submission
   (required before `CWS_EXTENSION_ID` exists) — confirm both by hand.

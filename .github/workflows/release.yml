@@ -99,7 +99,14 @@ jobs:
 
   publish-chrome:
     needs: build
-    if: github.event_name == 'push'
+    # The owner guard is what lets this file live byte-for-byte unchanged in a fork. A fork holds no
+    # secrets and no environments — GitHub does not copy either — so without this the job would go
+    # red for anyone who forked the repo. Skipped is the honest outcome, not failed.
+    #
+    # The corollary is deliberate: transferring this repo to an organisation *stops* store publishing
+    # rather than handing the stores to whoever owns that organisation. Re-enabling it is an edit
+    # someone has to make on purpose.
+    if: github.event_name == 'push' && github.repository_owner == 'noomorph'
     runs-on: ubuntu-latest
     # A protected environment, not repo-wide secrets: a fork's pull request must never be able to
     # see these, and a store push wants a human on the button.
@@ -130,6 +137,7 @@ jobs:
 
   publish-firefox:
     needs: build
+    if: github.repository_owner == 'noomorph' # see publish-chrome
     runs-on: ubuntu-latest
     environment: addons-mozilla-org
     steps:
